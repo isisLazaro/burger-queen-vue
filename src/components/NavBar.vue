@@ -1,18 +1,20 @@
 <template>
-    <div>
-        <p>holi soy la navbar</p>
-        <!--
-            1. menu hamburguesa
-            2.logo
-            3. comandas
-        -->
-    </div>
+  <div>
+    <figure>
+      <img src alt="menú hamburguesa" />
+    </figure>
+    <figure>
+      <img src alt="logoComandi" />
+    </figure>
+    <figure>
+      <img src alt="carrito de compras" />
+    </figure>
+  </div>
 </template>
 
 <script>
-
 export default {
-  name: "NavBar",
+  name: "NavBar"
   /* components: {
   } */
 };

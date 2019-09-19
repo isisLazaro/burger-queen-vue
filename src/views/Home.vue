@@ -1,24 +1,24 @@
 <template>
-    <div>
-        <navBar></navBar>
-        <EligeSucursal></EligeSucursal>
-        <!--
+  <div>
+    <navBar></navBar>
+    <ChooseLocation></ChooseLocation>
+    <!--
             1. navbar 
             2.elige sucursal y apretura de caja
-        -->
-    </div>
+    -->
+  </div>
 </template>
 
 <script>
 // @ is an alias to /src
 import NavBar from "@/components/NavBar.vue";
-import EligeSucursal from "@/components/EligeSucursal.vue"
+import ChooseLocation from "@/components/ChooseLocation.vue";
 
 export default {
   name: "home",
   components: {
     NavBar,
-    EligeSucursal
+    ChooseLocation
   }
 };
 </script>

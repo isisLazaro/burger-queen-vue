@@ -1,5 +1,6 @@
 <template>
   <div>
+ <!--fotos y con diferentes id-->   
     <figure>
       <img src alt="foto platillo" />
     </figure>
@@ -11,4 +12,4 @@
 export default {
   name: "DishCard"
 };
-</script>
+</script> 

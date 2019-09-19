@@ -1,11 +1,9 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Inicio</router-link>|
-      <router-link to="/tomacomanda">Toma de comanda</router-link>
+    <div id="app">
+        <div id="nav">
+        </div>
+        <router-view />
     </div>
-    <router-view />
-  </div>
 </template>
 
 <script>

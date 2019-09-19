@@ -9,7 +9,7 @@
             2 (x)elige
             3. (x)mesa
             4.agregar cliente
-            5 cuadrito de platillo 
+            5 (x)cuadrito de platillo 
     6. carrito de compras-->
   </div>
 </template>
@@ -20,6 +20,7 @@ import Service from "@/components/Service.vue";
 import ChooseTable from "@/components/ChooseTable.vue";
 import DishCard from "@/components/DishCard.vue";
 import ShoppingCart from "@/components/ShoppingCart.vue";
+
 export default {
   name: "Order",
   components: {

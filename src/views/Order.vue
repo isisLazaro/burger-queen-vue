@@ -9,7 +9,7 @@
             2 (x)elige
             3. (x)mesa
             4.agregar cliente
-            5 (x)cuadrito de platillo 
+            5 (x )cuadrito de platillo 
     6. carrito de compras-->
   </div>
 </template>

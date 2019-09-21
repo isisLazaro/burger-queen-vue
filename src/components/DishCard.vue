@@ -9,7 +9,8 @@
 </template>
 
 <script>
-export default {
-  name: "DishCard"
-};
+  export default {
+    name: "DishCard"
+  };
 </script> 
+ 

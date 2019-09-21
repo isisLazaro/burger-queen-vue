@@ -39,20 +39,36 @@ export default {
     return {
       dishes: [
         {
-          name: "HAMBURGUESA",
-          tipo: "un nombre que no me acuerdo en este momento",
-          foto:
-            "https://image.freepik.com/free-vector/burger-vector-illustration-simple-element-illustration-king-burger-with-crown-logo-vector_101969-3.jpg"
+          name: "Hamburguesa",
+          foto: require("../assets/imgMenu/hamburguesa.png")
         },
         {
-          name: "JOCHO",
-          tipo: "norteño",
-          foto: "https://image.freepik.com/free-vector/hot-dog_53876-43863.jpg"
+          name: "Jocho",
+          foto: require("../assets/imgMenu/jocho.png")
         },
         {
           name: "Pizza",
-          foto:
-            "https://image.freepik.com/free-vector/pizza-illustration_8319-36.jpg"
+          foto: require("../assets/imgMenu/pizza.png")
+        },
+        {
+          name: "Extra",
+          foto: require("../assets/imgMenu/extras.png")
+        },
+        {
+          name: "Ensalada",
+          foto: require("../assets/imgMenu/ensalada.png")
+        },
+        {
+          name: "Malteadas",
+          foto: require("../assets/imgMenu/malteadas.png")
+        },
+        {
+          name: "Soda Italiana",
+          foto: require("../assets/imgMenu/sodaItaliana.png")
+        },
+        {
+          name: "Postres",
+          foto: require("../assets/imgMenu/postres.png")
         }
       ]
     };

@@ -11,11 +11,10 @@
       <p>Apretura de caja</p>
       <input type="number" />
     </div>
-      <router-link to="/tomacomanda">ACEPTAR</router-link>
+    <router-link :to="{ name: 'TomaComanda' }">ACEPTAR</router-link>
   </div>
 </template>
 <script>
-
 export default {
   name: "ChooseLocation"
   /* components: {

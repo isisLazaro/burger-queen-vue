@@ -2,7 +2,13 @@
   <div class="home">
     <Service></Service>
     <ChooseTable></ChooseTable>
-    <DishCard></DishCard>
+    <DishCard
+      v-for="dish in dishes"
+      :key
+      :name="dish.name"
+      :foto="dish.foto"
+    ></DishCard>
+
     <ShoppingCart></ShoppingCart>
     <!--
             1.(x)navbar 
@@ -28,6 +34,60 @@ export default {
     ChooseTable,
     DishCard,
     ShoppingCart
+  },
+  data() {
+    return {
+      dishes: [
+        {
+          name: "Hamburguesa",
+          foto: require("../assets/imgMenu/hamburguesa.png"),
+          tipo: [
+            "Malicia",
+            "Soberbia",
+            "Gula",
+            "Alma en pena",
+            "Encarnación",
+            "Banana Limbo"
+          ],
+          hasCombo: true
+        },
+        {
+          name: "Jocho",
+          foto: require("../assets/imgMenu/jocho.png"),
+          hasCombo: true
+        },
+        {
+          name: "Pizza",
+          foto: require("../assets/imgMenu/pizza.png"),
+          hasCombo: false
+        },
+        {
+          name: "Extra",
+          foto: require("../assets/imgMenu/extras.png"),
+          hasCombo: false
+        },
+        {
+          name: "Ensalada",
+          foto: require("../assets/imgMenu/ensalada.png"),
+          hasCombo: false
+        },
+        {
+          name: "Malteadas",
+          foto: require("../assets/imgMenu/malteadas.png"),
+          hasCombo: false
+        },
+        {
+          name: "Soda Italiana",
+          foto: require("../assets/imgMenu/sodaItaliana.png"),
+          hasCombo: false
+        },
+        {
+          name: "Postres",
+          foto: require("../assets/imgMenu/postres.png"),
+          hasCombo: false
+        }
+      ]
+    };
   }
 };
 </script>

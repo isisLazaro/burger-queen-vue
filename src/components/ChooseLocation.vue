@@ -10,13 +10,10 @@
       <p>Apretura de caja</p>
       <input type="number" />
     </div>
-      <!--aqui va el boton que me lleva a view Order.vue-->
-      <router-link to="/tomacomanda">ACEPTAR</router-link>
-      <router-view />
+    <router-link :to="{ name: 'TomaComanda' }">ACEPTAR</router-link>
   </div>
 </template>
 <script>
-
 export default {
   name: "ChooseLocation"
   /* components: {

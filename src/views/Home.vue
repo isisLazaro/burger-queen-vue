@@ -13,7 +13,6 @@
 // @ is an alias to /src
 import NavBar from "@/components/NavBar.vue";
 import ChooseLocation from "@/components/ChooseLocation.vue";
-
 export default {
   name: "home",
   components: {

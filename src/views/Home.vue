@@ -1,11 +1,9 @@
 <template>
   <div>
     <navBar></navBar>
-    <ChooseLocation></ChooseLocation>
-    <!--
-            1. navbar 
-            2.elige sucursal y apretura de caja
-    -->
+    <v-content>
+      <ChooseLocation></ChooseLocation>
+    </v-content>
   </div>
 </template>
 

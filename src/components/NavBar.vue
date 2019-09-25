@@ -1,14 +1,16 @@
 <template>
   <div>
-    <figure>
-      <img src alt="menú hamburguesa" />
-    </figure>
-    <figure>
-      <img src alt="logoComandi" />
-    </figure>
-    <figure>
-      <img src alt="carrito de compras" />
-    </figure>
+    <v-app-bar app>
+      <v-app-bar-nav-icon></v-app-bar-nav-icon>
+      <v-spacer></v-spacer>
+      <figure>
+        <img src="../assets/logo-comdi.png" alt="logoComandi" width="200" />
+      </figure>
+      <v-spacer></v-spacer>
+      <v-btn icon>
+        <v-icon>mdi-heart</v-icon>
+      </v-btn>
+    </v-app-bar>
   </div>
 </template>
 
@@ -19,3 +21,9 @@ export default {
   } */
 };
 </script>
+
+<style>
+.v-toolbar__content {
+  background: #c4c4c4;
+}
+</style>

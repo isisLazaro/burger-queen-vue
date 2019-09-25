@@ -1,11 +1,12 @@
 <template>
-  <div  v-on:click="agregado">
-    <!--fotos y con diferentes id-->
-    <figure>
-      <img :src="foto" alt="foto platillo" width="200" />
-    </figure>
-    <p>{{ name }}</p>
-  </div>
+  <router-link :to="{ name: 'Platillo', params: { dish: name } }">
+    <div>
+      <figure>
+        <img :src="foto" alt="foto platillo" width="200" />
+      </figure>
+      <p>{{ name }}</p>
+    </div>
+  </router-link>
 </template>
 
 <script>

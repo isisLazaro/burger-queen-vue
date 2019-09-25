@@ -1,17 +1,12 @@
 <template>
-    <div>
-        <button>
-            RESTAURANTE
-        </button>
-        <button>
-            PARA LLEVAR
-        </button>
-    </div>
+  <div>
+    <button>RESTAURANTE</button>
+    <button>PARA LLEVAR</button>
+  </div>
 </template>
 
 <script>
 export default {
-  name: 'TipoServicio'
- 
+  name: "TipoServicio"
 };
 </script>

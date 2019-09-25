@@ -8,7 +8,7 @@
       </figure>
       <v-spacer></v-spacer>
       <v-btn icon>
-        <v-icon>mdi-heart</v-icon>
+        <v-icon>mdi-clipboard-check-outline</v-icon>
       </v-btn>
     </v-app-bar>
   </div>

@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div  v-on:click="agregado">
     <!--fotos y con diferentes id-->
     <figure>
       <img :src="foto" alt="foto platillo" width="200" />
@@ -17,6 +17,11 @@ export default {
       required: true
     },
     foto: {}
+  },
+  methods: {
+    agregado: function(){
+      alert(`Agregado ${this.name}`);
+    }
   }
 };
 </script>

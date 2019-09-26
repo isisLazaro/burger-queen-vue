@@ -2,6 +2,7 @@
   <div>
     <navBar></navBar>
     <v-content>
+      <p>Hola mesera!</p>
       <ChooseLocation></ChooseLocation>
     </v-content>
   </div>

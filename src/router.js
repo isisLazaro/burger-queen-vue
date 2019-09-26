@@ -4,6 +4,7 @@ import Home from "./views/Home.vue";
 import Order from "./views/Order.vue";
 import Dish from "./views/Dish.vue";
 import EditOrder from "./views/EditOrder.vue";
+import Login from "./views/Login.vue";
 
 Vue.use(Router);
 
@@ -13,6 +14,11 @@ export default new Router({
       path: "/",
       name: "home",
       component: Home
+    },
+    {
+      path: "/login",
+      name: "Login",
+      component: Login
     },
     {
       path: "/tomacomanda",

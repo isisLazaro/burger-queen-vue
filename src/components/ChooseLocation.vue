@@ -10,6 +10,7 @@
       <p>Apretura de caja</p>
       <input type="number" />
     </div>
+    <v-btn>ACEPTAR</v-btn>
     <router-link :to="{ name: 'TomaComanda' }">ACEPTAR</router-link>
   </div>
 </template>

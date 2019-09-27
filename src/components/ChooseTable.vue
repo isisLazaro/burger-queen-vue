@@ -1,14 +1,15 @@
 <template>
-  <div>
-    <v-select
-      :items="items"
-      outlined
-      multiple
-      chips
-      dense
-      label="Seleccionar mesa"
-    ></v-select>
-  </div>
+  <v-select
+    :items="items"
+    outlined
+    multiple
+    chips
+    deletable-chips="true"
+    dense="true"
+    label="Seleccionar mesa"
+    background-color="#8a7cd4"
+    item-color="#8A7CD4"
+  ></v-select>
 </template>
 
 <script>
@@ -22,13 +23,19 @@ export default {
         "mesa 3",
         "mesa 4",
         "mesa 5",
-        "mesa 6",
-        "mesa 7",
-        "mesa 8",
-        "mesa 9",
-        "mesa 10"
+        "barra lugar 6",
+        "barra lugar 7",
+        "barra lugar 8",
+        "barra lugar 9",
+        "barra lugar 10"
       ]
     };
   }
 };
 </script>
+<style scoped>
+.v-.theme--light {
+  color: white !important;
+  /* v-icon notranslate mdi mdi-menu-down theme--light */
+}
+</style>

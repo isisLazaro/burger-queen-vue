@@ -18,6 +18,11 @@ export default {
       required: true
     },
     foto: {}
+  },
+  methods: {
+    agregado: function(){
+      alert(`Agregado ${this.name}`);
+    }
   }
 };
 </script>

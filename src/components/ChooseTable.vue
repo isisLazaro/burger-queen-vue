@@ -1,22 +1,34 @@
 <template>
   <div>
-    <select name="seleccionar-mesa" id>
-      <option value>mesa 1</option>
-      <option value>mesa 2</option>
-      <option value>mesa 3</option>
-      <option value>mesa 4</option>
-      <option value>mesa 5</option>
-      <option value>mesa 6</option>
-      <option value>mesa 7</option>
-      <option value>mesa 8</option>
-      <option value>mesa 9</option>
-      <option value>mesa 10</option>
-    </select>
+    <v-select
+      :items="items"
+      outlined
+      multiple
+      chips
+      dense
+      label="Seleccionar mesa"
+    ></v-select>
   </div>
 </template>
 
 <script>
 export default {
-  name: "ChooseTable"
+  name: "ChooseTable",
+  data() {
+    return {
+      items: [
+        "mesa 1",
+        "mesa 2",
+        "mesa 3",
+        "mesa 4",
+        "mesa 5",
+        "mesa 6",
+        "mesa 7",
+        "mesa 8",
+        "mesa 9",
+        "mesa 10"
+      ]
+    };
+  }
 };
 </script>

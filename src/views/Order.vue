@@ -10,8 +10,8 @@
         :name="dish.name"
         :foto="dish.foto"
       ></DishCard>
-
       <ShoppingCart></ShoppingCart>
+      
       <!--
             1.(x)navbar 
             2 (x)elige

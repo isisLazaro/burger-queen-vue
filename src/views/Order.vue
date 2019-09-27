@@ -1,5 +1,5 @@
 <template>
-  <div class="home">
+  <v-app>
     <NavBar></NavBar>
     <v-content>
       <Service></Service>
@@ -20,7 +20,7 @@
             5 (x)cuadrito de platillo 
       6. carrito de compras-->
     </v-content>
-  </div>
+  </v-app>
 </template>
 
 <script>

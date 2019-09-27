@@ -8,7 +8,7 @@
     dense="true"
     label="Seleccionar mesa"
     background-color="#8a7cd4"
-    item-color="#8A7CD4"
+    item-color="#8a7cd4"
   ></v-select>
 </template>
 

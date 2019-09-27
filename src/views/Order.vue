@@ -2,23 +2,31 @@
   <v-app>
     <NavBar></NavBar>
     <v-content>
-      <Service></Service>
-      <ChooseTable></ChooseTable>
-      <DishCard
-        v-for="dish in dishes"
-        :key
-        :name="dish.name"
-        :foto="dish.foto"
-      ></DishCard>
-
-      <ShoppingCart></ShoppingCart>
-      <!--
+      <v-container>
+        <v-row>
+          <v-col>
+            <Service></Service>
+          </v-col>
+          <v-col>
+            <ChooseTable></ChooseTable>
+          </v-col>
+          <v-col>
+            <ShoppingCart></ShoppingCart>
+          </v-col>
+        </v-row>
+        <v-row>
+          <v-col cols="4" v-for="dish in dishes" :key>
+            <DishCard :name="dish.name" :foto="dish.foto"></DishCard>
+          </v-col>
+        </v-row>
+        <!--
             1.(x)navbar 
             2 (x)elige
             3. (x)mesa
             4.agregar cliente
             5 (x)cuadrito de platillo 
-      6. carrito de compras-->
+        6. carrito de compras-->
+      </v-container>
     </v-content>
   </v-app>
 </template>
@@ -57,32 +65,27 @@ export default {
           hasCombo: true
         },
         {
-          name: "Jocho",
+          name: "Jochos",
           foto: require("../assets/imgMenu/jocho.png"),
           hasCombo: true
         },
         {
-          name: "Pizza",
+          name: "Pizzas",
           foto: require("../assets/imgMenu/pizza.png"),
           hasCombo: false
         },
         {
-          name: "Extra",
+          name: "Entradas/Extras",
           foto: require("../assets/imgMenu/extras.png"),
           hasCombo: false
         },
         {
-          name: "Ensalada",
+          name: "Ensaladas",
           foto: require("../assets/imgMenu/ensalada.png"),
           hasCombo: false
         },
         {
-          name: "Malteadas",
-          foto: require("../assets/imgMenu/malteadas.png"),
-          hasCombo: false
-        },
-        {
-          name: "Soda Italiana",
+          name: "Bebidas",
           foto: require("../assets/imgMenu/sodaItaliana.png"),
           hasCombo: false
         },

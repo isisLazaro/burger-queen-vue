@@ -17,6 +17,7 @@
         <v-row>
           <v-col cols="4" v-for="dish in dishes" :key>
             <DishCard :name="dish.name" :foto="dish.foto"></DishCard>
+            <v-spacer></v-spacer>
           </v-col>
         </v-row>
         <!--

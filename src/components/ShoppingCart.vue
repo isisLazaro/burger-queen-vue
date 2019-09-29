@@ -1,9 +1,9 @@
 <template>
   <div class="container">
     <v-card width="30vw" height="75vh" class="mx-auto">
-      <v-card-title> {{ showCar ? 'Pedido Actual': 'Pedidos para llevar'}}</v-card-title>
+      <v-card-title> {{ false ? 'Pedido Actual': 'Pedidos para llevar'}}</v-card-title>
       <v-divider class="mx-4" :inset="inset" horizontal></v-divider>
-      <CurrentOrder v-show=!true> </CurrentOrder>
+      <CurrentOrder v-show=true> </CurrentOrder>
       <AllOrders v-show=true></AllOrders>
     </v-card>
   </div>
@@ -31,70 +31,61 @@
         },
         { text: 'precio', value: 'price' },
       ],
-      props: {
-        showCar: {
-        type: Boolean,
-        default: function () {
-        return true
-      }
         }
       },
-      platillos: [
-        {
-          name: 'Frozen Yogurt',
-          category: 'Cliente 1',
-          price: 5,
-        },
-        {
-          name: 'Ice cream sandwich',
-          category: 'Cliente 2',
-          price: 5,
-        },
-        {
-          name: 'Eclair',
-          category: 'Cliente 3',
-          price: 5,
-        },
-        {
-          name: 'Cupcake',
-          category: 'Cliente 1',
-          price: 5,
-        },
-        {
-          name: 'Gingerbread',
-          category: 'Cliente 2',
-          price: 5,
-        },
-        {
-          name: 'Jelly bean',
-          category: 'Cliente 3',
-          price: 5,
-        },
-        {
-          name: 'Lollipop',
-          category: 'Cliente 4',
-          price: 5,
-        },
-        {
-          name: 'Honeycomb',
-          category: 'Cliente 1',
-          price: 5,
-        },
-        {
-          name: 'Donut',
-          category: 'Cliente 2',
-          price: 5,
-        },
-        {
-          name: 'KitKat',
-          category: 'Cliente 5',
-          price: 5,
-        },
-      ],
-    }
-  },
+    platillos: [{
+        name: 'Frozen Yogurt',
+        category: 'Cliente 1',
+        price: 5,
+      },
+      {
+        name: 'Ice cream sandwich',
+        category: 'Cliente 2',
+        price: 5,
+      },
+      {
+        name: 'Eclair',
+        category: 'Cliente 3',
+        price: 5,
+      },
+      {
+        name: 'Cupcake',
+        category: 'Cliente 1',
+        price: 5,
+      },
+      {
+        name: 'Gingerbread',
+        category: 'Cliente 2',
+        price: 5,
+      },
+      {
+        name: 'Jelly bean',
+        category: 'Cliente 3',
+        price: 5,
+      },
+      {
+        name: 'Lollipop',
+        category: 'Cliente 4',
+        price: 5,
+      },
+      {
+        name: 'Honeycomb',
+        category: 'Cliente 1',
+        price: 5,
+      },
+      {
+        name: 'Donut',
+        category: 'Cliente 2',
+        price: 5,
+      },
+      {
+        name: 'KitKat',
+        category: 'Cliente 5',
+        price: 5,
+      },
+    ],
+  }
 
-  };
 
 </script>
 

@@ -11,7 +11,7 @@
             <ChooseTable></ChooseTable>
           </v-col>
           <v-col>
-            <ShoppingCart :showCar=true></ShoppingCart>
+            <ShoppingCart></ShoppingCart>
           </v-col>
         </v-row>
         <v-row>
@@ -50,8 +50,6 @@ export default {
   },
   data() {
     return {
-      showCar: true,
-      msg: "Holi mundo",
       dishes: [
         {
           name: "Hamburguesa",

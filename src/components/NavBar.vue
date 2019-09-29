@@ -2,6 +2,7 @@
   <div>
     <v-app-bar app>
       <v-app-bar-nav-icon></v-app-bar-nav-icon>
+      <LeftMenu />
       <v-spacer></v-spacer>
       <figure>
         <img src="../assets/logo-comdi.png" alt="logoComandi" width="200" />
@@ -17,8 +18,6 @@
 <script>
 export default {
   name: "NavBar"
-  /* components: {
-  } */
 };
 </script>
 

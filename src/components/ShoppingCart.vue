@@ -1,17 +1,10 @@
 <template>
   <div class="container">
     <v-card width="30vw" height="75vh" class="mx-auto">
-      <v-card-title>Pedido actual</v-card-title>
+      <v-card-title> {{ showCar ? 'Pedido Actual': 'Pedidos para llevar'}}</v-card-title>
       <v-divider class="mx-4" :inset="inset" horizontal></v-divider>
-      <v-card-text>Ej: Restaurante Mesa 3</v-card-text>
-      <v-data-table :headers="headers" :items="platillos" item-key="name" group-by="category" class="elevation-1"
-        show-group-by hide-default-header></v-data-table>
-      <v-card-actions>
-        <v-card-text>Total : $$$$$$$$ </v-card-text>
-        <div class="text-center">
-          <v-btn>A COCINA</v-btn>
-        </div>
-      </v-card-actions>
+      <CurrentOrder v-show=!true> </CurrentOrder>
+      <AllOrders v-show=true></AllOrders>
     </v-card>
   </div>
 </template>
@@ -19,8 +12,15 @@
 
 
 <script>
+  import CurrentOrder from "@/components/CurrentOrder.vue";
+  import AllOrders from "@/components/AllOrders.vue";
+
   export default {
     name: "ShoppingCart",
+    components:{
+      AllOrders,
+      CurrentOrder,
+    },
     data () {
     return {
       headers: [
@@ -31,6 +31,14 @@
         },
         { text: 'precio', value: 'price' },
       ],
+      props: {
+        showCar: {
+        type: Boolean,
+        default: function () {
+        return true
+      }
+        }
+      },
       platillos: [
         {
           name: 'Frozen Yogurt',
@@ -97,10 +105,7 @@
     justify-content: flex-end;
   }
 
-  .theme--light.v-btn:not(.v-btn--flat):not(.v-btn--text):not(.v-btn--outlined) {
-    background-color: #42C157;
-    color: white;
-  }
+
 
   .v-card__actions {
     flex-direction: column;

@@ -7,7 +7,7 @@
         <img src="../assets/logo-comdi.png" alt="logoComandi" width="200" />
       </figure>
       <v-spacer></v-spacer>
-      <v-btn icon @click="showAllOrders">
+      <v-btn icon @click="$root.$emit('show-all-orders')">
         <v-icon>mdi-clipboard-check-outline</v-icon>
       </v-btn>
     </v-app-bar>
@@ -24,13 +24,8 @@ export default {
       showAll: false,
     }
   },
-  methods:{
-    showAllOrders: function(){
-      this.$root.$emit('show-all-orders', this.showAll)
-      console.log(this.showAll)
-    }
-  }
-  
+
+
 };
 </script>
 

@@ -3,8 +3,8 @@
     <v-card width="30vw" height="75vh" class="mx-auto">
       <v-card-title> {{ showAll ?'Pedidos para llevar' : 'Pedido Actual'}}</v-card-title>
       <v-divider class="mx-4" :inset="inset" horizontal></v-divider>
-      <CurrentOrder v-show=!true> </CurrentOrder>
-      <AllOrders v-show=true></AllOrders>
+      <CurrentOrder v-show="!showAll"> </CurrentOrder>
+      <AllOrders v-show="showAll"></AllOrders>
     </v-card>
   </div>
 </template>
@@ -22,14 +22,16 @@
       CurrentOrder,
     },
     mounted() {
-      this.$root.$on('show-all-orders', (showAll)=>{
-        showAll=!showAll
-        console.log(showAll)
-      })
+      this.$root.$on('show-all-orders', ()=>{
+        this.showAll=!this.showAll
+        console.log(this.showAll)
+      }
+      )
 
     },
     data() {
       return {
+        showAll: false,
         headers: [{
             text: 'Pedido',
             align: 'left',

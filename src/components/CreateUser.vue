@@ -1,5 +1,5 @@
 <template>
-    
-        <h1>Crear Usuarios</h1>
-    
+    <div>
+        <h1> crear usuario</h1>
+    </div>
 </template>

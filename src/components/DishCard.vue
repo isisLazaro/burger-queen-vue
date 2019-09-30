@@ -1,23 +1,46 @@
 <template>
   <router-link :to="{ name: 'Platillo', params: { dish: name } }">
-    <div>
-      <figure>
-        <img :src="foto" alt="foto platillo" width="200" />
-      </figure>
-      <p>{{ name }}</p>
-    </div>
+    <v-card class="mx-auto" :width="width">
+      <v-img :src="foto" alt="foto platillo" :width="width"></v-img>
+      <v-card-title>{{ name }}</v-card-title>
+    </v-card>
   </router-link>
 </template>
 
 <script>
 export default {
   name: "DishCard",
+  data() {
+    return {
+      width: 250
+    };
+  },
   props: {
     name: {
       type: String,
       required: true
     },
     foto: {}
+  },
+  methods: {
+    agregado: function(){
+      alert(`Agregado ${this.name}`);
+    }
   }
 };
 </script>
+
+<style scoped>
+.v-sheet {
+  border-radius: 0;
+}
+.v-card__title {
+  color: #333333;
+  font-size: 1.2rem;
+  padding: 0.5rem 0;
+  justify-content: center;
+}
+a {
+  text-decoration: none;
+}
+</style>

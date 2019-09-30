@@ -1,64 +1,23 @@
 <template>
   <div>
-    <v-card
-      :loading="loading"
-      class="mx-auto my-12"
-      max-width="374"
-    >
-      <v-card-title>Elige sucursal</v-card-title>
-       <v-row
-          align="center"
-          justify="center"
-        >
-          <v-btn-toggle
-            v-model="toggle_exclusive"
-            mandatory
-          >
-            <v-btn text value="chilpancingo">
-             Chilpancingo
-            </v-btn>
-            <v-btn text value="tonala">
-              Tonalá
-            </v-btn>
-            
-          </v-btn-toggle>
-        </v-row>
-      
-    </v-card>
-
     <div>
-     <v-card
-      :loading="loading"
-      class="mx-auto my-12"
-      max-width="374"
-    >
-      <v-card-title>Apertura de caja</v-card-title>
-    
-        <v-text-field
-            label="Cantidad"
-            
-            prefix="$"
-          ></v-text-field>
-
-      <v-card-actions>
-       <v-btn class="mx-2" fab dark color="indigo">
-        <v-icon dark>mdi-plus</v-icon>
-      </v-btn>
-      </v-card-actions> 
-    </v-card>
+      <p>Elige tu surcusal</p>
+      <!--aqui va el boton que me lleva a view Order.vue-->
+      <button>Orizaba</button>
+      <button>Chilpancingo</button>
     </div>
-
-    <router-link :to="{ name: 'TomaComanda' }">
+    <div>
+      <p>Apretura de caja</p>
+      <input type="number" />
+    </div>
     <v-btn>ACEPTAR</v-btn>
-
-    </router-link>
+    <router-link :to="{ name: 'TomaComanda' }">ACEPTAR</router-link>
   </div>
 </template>
 <script>
-
+export default {
+  name: "ChooseLocation"
+  /* components: {
+  } */
+};
 </script>
-
-<style>
-
-  
-</style>

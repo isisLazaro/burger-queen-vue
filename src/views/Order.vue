@@ -1,20 +1,32 @@
 <template>
-  <div class="home">
+  <v-app>
     <NavBar></NavBar>
     <v-content>
-      <Service></Service>
-      <ChooseTable></ChooseTable>
-      <DishCard
-        v-for="dish in dishes"
-        :key
-        :name="dish.name"
-        :foto="dish.foto"
-      ></DishCard>
-
-      <ShoppingCart></ShoppingCart>
-
+      <v-container>
+        <v-row>
+          <v-col cols="8">
+            <v-row>
+              <v-col>
+                <Service />
+              </v-col>
+              <v-col>
+                <ChooseTable />
+              </v-col>
+            </v-row>
+            <v-row>
+              <v-col cols="6" v-for="dish in dishes" :key>
+                <DishCard :name="dish.name" :foto="dish.foto" />
+              </v-col>
+            </v-row>
+          </v-col>
+          <v-col>
+            <!-- <Service /> -->
+            <ShoppingCart />
+          </v-col>
+        </v-row>
+      </v-container>
     </v-content>
-  </div>
+  </v-app>
 </template>
 
 <script>
@@ -24,7 +36,6 @@ import Service from "@/components/Service.vue";
 import ChooseTable from "@/components/ChooseTable.vue";
 import DishCard from "@/components/DishCard.vue";
 import ShoppingCart from "@/components/ShoppingCart.vue";
-
 export default {
   name: "Order",
   components: {
@@ -51,32 +62,27 @@ export default {
           hasCombo: true
         },
         {
-          name: "Jocho",
+          name: "Jochos",
           foto: require("../assets/imgMenu/jocho.png"),
           hasCombo: true
         },
         {
-          name: "Pizza",
+          name: "Pizzas",
           foto: require("../assets/imgMenu/pizza.png"),
           hasCombo: false
         },
         {
-          name: "Extra",
+          name: "Entradas/Extras",
           foto: require("../assets/imgMenu/extras.png"),
           hasCombo: false
         },
         {
-          name: "Ensalada",
+          name: "Ensaladas",
           foto: require("../assets/imgMenu/ensalada.png"),
           hasCombo: false
         },
         {
-          name: "Malteadas",
-          foto: require("../assets/imgMenu/malteadas.png"),
-          hasCombo: false
-        },
-        {
-          name: "Soda Italiana",
+          name: "Bebidas",
           foto: require("../assets/imgMenu/sodaItaliana.png"),
           hasCombo: false
         },

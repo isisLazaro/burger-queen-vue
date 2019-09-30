@@ -1,22 +1,41 @@
 <template>
-  <div>
-    <select name="seleccionar-mesa" id>
-      <option value>mesa 1</option>
-      <option value>mesa 2</option>
-      <option value>mesa 3</option>
-      <option value>mesa 4</option>
-      <option value>mesa 5</option>
-      <option value>mesa 6</option>
-      <option value>mesa 7</option>
-      <option value>mesa 8</option>
-      <option value>mesa 9</option>
-      <option value>mesa 10</option>
-    </select>
-  </div>
+  <v-select
+    :items="items"
+    outlined
+    multiple
+    chips
+    deletable-chips="true"
+    dense="true"
+    label="Seleccionar mesa"
+    background-color="#8a7cd4"
+    item-color="#8a7cd4"
+  ></v-select>
 </template>
 
 <script>
 export default {
-  name: "ChooseTable"
+  name: "ChooseTable",
+  data() {
+    return {
+      items: [
+        "mesa 1",
+        "mesa 2",
+        "mesa 3",
+        "mesa 4",
+        "mesa 5",
+        "barra lugar 6",
+        "barra lugar 7",
+        "barra lugar 8",
+        "barra lugar 9",
+        "barra lugar 10"
+      ]
+    };
+  }
 };
 </script>
+<style scoped>
+.v-.theme--light {
+  color: white !important;
+  /* v-icon notranslate mdi mdi-menu-down theme--light */
+}
+</style>

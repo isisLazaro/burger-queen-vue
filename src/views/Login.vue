@@ -26,8 +26,6 @@
   </v-app>
 </template>
 
-Preview of finished login module
-
 <script>
 export default {
   name: "App",

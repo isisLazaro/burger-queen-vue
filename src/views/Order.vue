@@ -4,28 +4,25 @@
     <v-content>
       <v-container>
         <v-row>
-          <v-col>
-            <Service></Service>
+          <v-col cols="8">
+            <v-row>
+              <v-col>
+                <Service />
+              </v-col>
+              <v-col>
+                <ChooseTable />
+              </v-col>
+            </v-row>
+            <v-row>
+              <v-col cols="6" v-for="dish in dishes" :key>
+                <DishCard :name="dish.name" :foto="dish.foto" />
+              </v-col>
+            </v-row>
           </v-col>
           <v-col>
-            <ChooseTable></ChooseTable>
-          </v-col>
-          <v-col>
-            <ShoppingCart></ShoppingCart>
+            <ShoppingCart />
           </v-col>
         </v-row>
-        <v-row>
-          <v-col cols="4" v-for="(dish,key) in dishes" :key="key">
-            <DishCard :name="dish.name" :foto="dish.foto"></DishCard>
-          </v-col>
-        </v-row>
-        <!--
-            1.(x)navbar 
-            2 (x)elige
-            3. (x)mesa
-            4.agregar cliente
-            5 (x)cuadrito de platillo 
-        6. carrito de compras-->
       </v-container>
     </v-content>
   </v-app>
@@ -100,3 +97,8 @@ export default {
 };
 </script>
 
+<style scoped>
+.ShoppingCart {
+  align-items: flex-end;
+}
+</style>

@@ -14,7 +14,6 @@
 <script>
   import CurrentOrder from "@/components/CurrentOrder.vue";
   import AllOrders from "@/components/AllOrders.vue";
-
   export default {
     name: "ShoppingCart",
     components: {
@@ -27,7 +26,6 @@
         console.log(this.showAll)
       }
       )
-
     },
     data() {
       return {
@@ -96,8 +94,6 @@
       },
     ],
   }
-
-
 </script>
 
 
@@ -106,15 +102,11 @@
     display: inline-flex;
     justify-content: flex-end;
   }
-
-
-
   .v-card__actions {
     flex-direction: column;
     justify-self: flex-end;
     align-self: center;
   }
-
   .mx-auto {
     display: flex;
     flex-direction: column;

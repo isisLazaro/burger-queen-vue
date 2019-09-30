@@ -20,6 +20,7 @@
             </v-row>
           </v-col>
           <v-col>
+            <!-- <Service /> -->
             <ShoppingCart />
           </v-col>
         </v-row>
@@ -91,14 +92,8 @@ export default {
           foto: require("../assets/imgMenu/postres.png"),
           hasCombo: false
         }
-      ],
+      ]
     };
   }
 };
 </script>
-
-<style scoped>
-.ShoppingCart {
-  align-items: flex-end;
-}
-</style>

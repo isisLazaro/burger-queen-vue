@@ -1,27 +1,25 @@
 <template>
   <div class="home">
-    <Service></Service>
-    <ChooseTable></ChooseTable>
-    <DishCard
-      v-for="dish in dishes"
-      :key
-      :name="dish.name"
-      :foto="dish.foto"
-    ></DishCard>
+    <NavBar></NavBar>
+    <v-content>
+      <Service></Service>
+      <ChooseTable></ChooseTable>
+      <DishCard
+        v-for="dish in dishes"
+        :key
+        :name="dish.name"
+        :foto="dish.foto"
+      ></DishCard>
 
-    <ShoppingCart></ShoppingCart>
-    <!--
-            1.(x)navbar 
-            2 (x)elige
-            3. (x)mesa
-            4.agregar cliente
-            5 (x )cuadrito de platillo 
-    6. carrito de compras-->
+      <ShoppingCart></ShoppingCart>
+
+    </v-content>
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
+import NavBar from "@/components/NavBar.vue";
 import Service from "@/components/Service.vue";
 import ChooseTable from "@/components/ChooseTable.vue";
 import DishCard from "@/components/DishCard.vue";
@@ -30,6 +28,7 @@ import ShoppingCart from "@/components/ShoppingCart.vue";
 export default {
   name: "Order",
   components: {
+    NavBar,
     Service,
     ChooseTable,
     DishCard,

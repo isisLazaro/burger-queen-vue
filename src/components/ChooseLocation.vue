@@ -1,23 +1,64 @@
 <template>
   <div>
+    <v-card
+      :loading="loading"
+      class="mx-auto my-12"
+      max-width="374"
+    >
+      <v-card-title>Elige sucursal</v-card-title>
+       <v-row
+          align="center"
+          justify="center"
+        >
+          <v-btn-toggle
+            v-model="toggle_exclusive"
+            mandatory
+          >
+            <v-btn text value="chilpancingo">
+             Chilpancingo
+            </v-btn>
+            <v-btn text value="tonala">
+              Tonalá
+            </v-btn>
+            
+          </v-btn-toggle>
+        </v-row>
+      
+    </v-card>
+
     <div>
-      <p>Holi mesera!</p>
-      <p>Elige tu surcusal</p>
-      <button>Orizaba</button>
-      <button>Chilpancingo</button>
+     <v-card
+      :loading="loading"
+      class="mx-auto my-12"
+      max-width="374"
+    >
+      <v-card-title>Apertura de caja</v-card-title>
+    
+        <v-text-field
+            label="Cantidad"
+            
+            prefix="$"
+          ></v-text-field>
+
+      <v-card-actions>
+       <v-btn class="mx-2" fab dark color="indigo">
+        <v-icon dark>mdi-plus</v-icon>
+      </v-btn>
+      </v-card-actions> 
+    </v-card>
     </div>
-    <div>
-      <p>Apretura de caja</p>
-      <input type="number" />
-    </div>
+
+    <router-link :to="{ name: 'TomaComanda' }">
     <v-btn>ACEPTAR</v-btn>
-    <router-link :to="{ name: 'TomaComanda' }">ACEPTAR</router-link>
+
+    </router-link>
   </div>
 </template>
 <script>
-export default {
-  name: "ChooseLocation"
-  /* components: {
-  } */
-};
+
 </script>
+
+<style>
+
+  
+</style>

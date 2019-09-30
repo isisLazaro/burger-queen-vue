@@ -12,7 +12,6 @@
 
 <script>
 import ShoppingCartBtn from "@/components/ShoppingCartBtn";
-
 export default {
     name: "CurrentOrder",
     components:{

@@ -40,8 +40,8 @@ export default {
   padding: 0.5rem 0;
   justify-content: center;
 }
-
 a {
   text-decoration: none;
 }
 </style>
+

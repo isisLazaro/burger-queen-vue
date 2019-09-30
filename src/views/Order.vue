@@ -36,7 +36,6 @@ import Service from "@/components/Service.vue";
 import ChooseTable from "@/components/ChooseTable.vue";
 import DishCard from "@/components/DishCard.vue";
 import ShoppingCart from "@/components/ShoppingCart.vue";
-
 export default {
   name: "Order",
   components: {

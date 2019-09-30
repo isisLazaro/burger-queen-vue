@@ -39,3 +39,4 @@ export default {
   /* v-icon notranslate mdi mdi-menu-down theme--light */
 }
 </style>
+

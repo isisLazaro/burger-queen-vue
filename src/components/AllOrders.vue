@@ -12,6 +12,7 @@
 
 <script>
 import ShoppingCartBtn from "@/components/ShoppingCartBtn";
+
 export default {
     name: "AllOrders",
     components:{

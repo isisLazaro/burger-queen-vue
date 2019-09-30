@@ -18,9 +18,7 @@ let router = new Router({
       name: "home",
       component: Home,
       meta: {
-        administradora:true,
-        mesera: true,
-        mesero: true
+        libre:true 
       }
     }, 
     {
@@ -36,9 +34,7 @@ let router = new Router({
       name: "TomaComanda",
       component: Order,
       meta: {
-        administradora:true,
-        mesera: true,
-        mesero: true
+        libre:true 
       }
     },
     {
@@ -47,9 +43,7 @@ let router = new Router({
       component: Dish,
       props: true,
       meta: {
-        administradora:true,
-        mesera: true,
-        mesero: true
+        libre:true 
       }
     },
     {
@@ -57,9 +51,7 @@ let router = new Router({
       name: "EditarPlatillo",
       component: EditOrder,
       meta: {
-        administradora:true,
-        mesera: true,
-        mesero: true
+        libre:true 
       }
     },
     {
@@ -75,7 +67,7 @@ let router = new Router({
       name: "createuser",
       component: CreateUser,
       meta: {
-        administradora:true
+        libre:true 
        }
     }]
 })

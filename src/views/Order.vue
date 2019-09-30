@@ -15,7 +15,7 @@
           </v-col>
         </v-row>
         <v-row>
-          <v-col cols="4" v-for="dish in dishes" :key>
+          <v-col cols="4" v-for="(dish,key) in dishes" :key="key">
             <DishCard :name="dish.name" :foto="dish.foto"></DishCard>
           </v-col>
         </v-row>
@@ -94,8 +94,9 @@ export default {
           foto: require("../assets/imgMenu/postres.png"),
           hasCombo: false
         }
-      ]
+      ],
     };
   }
 };
 </script>
+

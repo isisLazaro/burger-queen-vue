@@ -7,7 +7,7 @@
         <img src="../assets/logo-comdi.png" alt="logoComandi" width="200" />
       </figure>
       <v-spacer></v-spacer>
-      <v-btn icon>
+      <v-btn icon @click="$root.$emit('show-all-orders')">
         <v-icon>mdi-clipboard-check-outline</v-icon>
       </v-btn>
     </v-app-bar>
@@ -16,9 +16,16 @@
 
 <script>
 export default {
-  name: "NavBar"
+  name: "NavBar",
   /* components: {
   } */
+  data() {
+    return {
+      showAll: false,
+    }
+  },
+
+
 };
 </script>
 

@@ -91,7 +91,7 @@ export default {
           foto: require("../assets/imgMenu/postres.png"),
           hasCombo: false
         }
-      ]
+      ],
     };
   }
 };

@@ -1,9 +1,9 @@
 <template>
   <div class="container">
     <v-card width="30vw" height="75vh" class="mx-auto">
-      <v-card-title> {{ false ? 'Pedido Actual': 'Pedidos para llevar'}}</v-card-title>
+      <v-card-title> {{ showAll ?'Pedidos para llevar' : 'Pedido Actual'}}</v-card-title>
       <v-divider class="mx-4" :inset="inset" horizontal></v-divider>
-      <CurrentOrder v-show=true> </CurrentOrder>
+      <CurrentOrder v-show=!true> </CurrentOrder>
       <AllOrders v-show=true></AllOrders>
     </v-card>
   </div>
@@ -17,22 +17,31 @@
 
   export default {
     name: "ShoppingCart",
-    components:{
+    components: {
       AllOrders,
       CurrentOrder,
     },
-    data () {
-    return {
-      headers: [
-        {
-          text: 'Pedido',
-          align: 'left',
-          value: 'name',
-        },
-        { text: 'precio', value: 'price' },
-      ],
-        }
-      },
+    mounted() {
+      this.$root.$on('show-all-orders', (showAll)=>{
+        showAll=!showAll
+        console.log(showAll)
+      })
+
+    },
+    data() {
+      return {
+        headers: [{
+            text: 'Pedido',
+            align: 'left',
+            value: 'name',
+          },
+          {
+            text: 'precio',
+            value: 'price'
+          },
+        ],
+      }
+    },
     platillos: [{
         name: 'Frozen Yogurt',
         category: 'Cliente 1',

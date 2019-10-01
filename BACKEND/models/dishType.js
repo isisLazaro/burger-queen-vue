@@ -1,6 +1,7 @@
 import mongoose, { Schema } from "mongoose";
 
 const dishTypeSchema = new Schema({
+   // categoria : {type: Schema.ObjectId, ref: 'categoria',required:true },
     //malicia
     nombre: { type: String, maxlength: 50, unique: true, required: true },
     //combo
@@ -30,4 +31,4 @@ const dishTypeSchema = new Schema({
 
 const DishType = mongoose.model("dishType", dishTypeSchema);
 
-export default DishType;
+export default DishType

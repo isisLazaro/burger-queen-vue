@@ -1,7 +1,9 @@
-import Category from "./dishCard";
+import DishCard from "./dishCard";
 import User from "./user";
+import DishType from "./dishType";
 
 export default {
-    Category,
-    User
+    DishCard,
+    User,
+    DishType
 }

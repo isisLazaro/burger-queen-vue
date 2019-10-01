@@ -1,6 +1,6 @@
 import routerx from "express-promise-router";
 import dishCardController from "../controllers/DishCardController";
-import auth from "../middlewares/auth";
+//import auth from "../middlewares/auth";
 
 const router = routerx();
 //eliminar momentanamente  auth.verifyAdministradora, regresarlo cuando ya se implemente login

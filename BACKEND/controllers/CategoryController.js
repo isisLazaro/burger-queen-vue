@@ -1,22 +1,19 @@
 import models from "../models";
 
 export default {
-    //funciones de middleware
+    //en seccion administradora
     add: async ( req, res, next) => {
         try {
-            //reg de registro
-            //se obtiene un objeto en elparametro req(mediante ajax) en el body, lo enviamos al metodo create para almacenar el objeto en la collecion categoria
             const reg = await models.Category.create(req.body);
-            //devolver el resgistro como json en category
             res.status(200).json(reg);
         } catch (e){
             res.status(500).send({
                 message: 'An error ocurred at adding a category'
             });
-            //mostrar el error en el middlware morgan
             next(e);
         }
     },
+    //en seccion administradora
     query: async (req,res,next) => {
         try { 
             const reg = await models.Category.findOne({_id:req.query._id});
@@ -34,6 +31,7 @@ export default {
             next(e);
         }
     },
+    //en seccion administradora y en la carta
     list: async (req,res,next) => {
         try {
             let valor = req.query.valor;
@@ -47,6 +45,7 @@ export default {
             next(e);
         }
     },
+    //en seccion administradora
     update: async (req,res,next) => {
         try {
             const reg = await models.Category.findByIdAndUpdate({_id:req.body._id},{nombre:req.body.nombre,descripcion:req.body.descripcion});
@@ -58,6 +57,7 @@ export default {
             next(e);
         }
     },
+    //en seccion administradora
     remove: async (req,res,next) => {
         try {
             const reg = await models.Category.findByIdAndDelete({_id:req.body._id});
@@ -69,6 +69,7 @@ export default {
             next(e);
         }
     },
+    //en seccion administradora
     activate: async (req,res,next) => {
         try {
             const reg = await models.Category.findByIdAndUpdate({_id:req.body._id},{estado:1});
@@ -80,6 +81,7 @@ export default {
             next(e);
         }
     },
+    //en seccion administradora
     deactivate: async (req,res,next) => {
         try {
             const reg = await models.Category.findByIdAndUpdate({_id:req.body._id},{estado:0});

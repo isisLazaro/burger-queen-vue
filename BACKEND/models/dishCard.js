@@ -1,14 +1,13 @@
 import mongoose, { Schema } from "mongoose";
 
-const categorySchema = new Schema({
+const dishCardSchema = new Schema({
     nombre: { type: String, maxlength: 50, unique: true, required: true },
     //hamburguesas, entradas, jochos
-    descripcion: { type: String, maxlength: 255 },
     estado: { type: Number, default: 1 },
     createdAt: { type: Date, default: Date.now }
 });
 
-const Category = mongoose.model("category", categorySchema);
+const DishCard = mongoose.model("dishCard", dishCardSchema);
 
-export default Category;
+export default DishCard;
 

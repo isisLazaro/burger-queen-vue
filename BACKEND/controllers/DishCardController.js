@@ -4,7 +4,7 @@ export default {
     //en seccion administradora
     add: async ( req, res, next) => {
         try {
-            const reg = await models.Category.create(req.body);
+            const reg = await models.DishCard.create(req.body);
             res.status(200).json(reg);
         } catch (e){
             res.status(500).send({
@@ -16,7 +16,7 @@ export default {
     //en seccion administradora
     query: async (req,res,next) => {
         try { 
-            const reg = await models.Category.findOne({_id:req.query._id});
+            const reg = await models.DishCard.findOne({_id:req.query._id});
             if(!reg){
                 res.status(404).send({
                     message:'Register does not exist '
@@ -35,7 +35,7 @@ export default {
     list: async (req,res,next) => {
         try {
             let valor = req.query.valor;
-            const reg = await models.Category.find({$or:[{'nombre':new RegExp(valor,'i')},{'descripcion':new RegExp(valor,'i')}]},{createdAt:0})
+            const reg = await models.DishCard.find({$or:[{'nombre':new RegExp(valor,'i')},{'descripcion':new RegExp(valor,'i')}]},{createdAt:0})
             .sort({'createdAt': -1})
             res.status(200).json(reg);
         } catch (e){
@@ -48,7 +48,7 @@ export default {
     //en seccion administradora
     update: async (req,res,next) => {
         try {
-            const reg = await models.Category.findByIdAndUpdate({_id:req.body._id},{nombre:req.body.nombre,descripcion:req.body.descripcion});
+            const reg = await models.DishCard.findByIdAndUpdate({_id:req.body._id},{nombre:req.body.nombre,descripcion:req.body.descripcion});
             res.status(200).json(reg);
         } catch (e){
             res.status(500).send({
@@ -60,7 +60,7 @@ export default {
     //en seccion administradora
     remove: async (req,res,next) => {
         try {
-            const reg = await models.Category.findByIdAndDelete({_id:req.body._id});
+            const reg = await models.DishCard.findByIdAndDelete({_id:req.body._id});
             res.status(200).json(reg);
         } catch (e){
             res.status(500).send({
@@ -72,7 +72,7 @@ export default {
     //en seccion administradora
     activate: async (req,res,next) => {
         try {
-            const reg = await models.Category.findByIdAndUpdate({_id:req.body._id},{estado:1});
+            const reg = await models.DishCard.findByIdAndUpdate({_id:req.body._id},{estado:1});
             res.status(200).json(reg);
         } catch (e){
             res.status(500).send({
@@ -84,7 +84,7 @@ export default {
     //en seccion administradora
     deactivate: async (req,res,next) => {
         try {
-            const reg = await models.Category.findByIdAndUpdate({_id:req.body._id},{estado:0});
+            const reg = await models.DishCard.findByIdAndUpdate({_id:req.body._id},{estado:0});
             res.status(200).json(reg);
         } catch (e){
             res.status(500).send({

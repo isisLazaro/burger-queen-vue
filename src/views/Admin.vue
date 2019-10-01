@@ -53,7 +53,7 @@
               </v-list-item-action>
               <v-list-item-content>
                 <v-list-item-title>
-                  ---
+                   AGREGAR PLATILLO
                 </v-list-item-title>
               </v-list-item-content>
             </v-list-item>

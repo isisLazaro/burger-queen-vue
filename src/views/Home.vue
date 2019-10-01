@@ -1,22 +1,30 @@
 <template>
-  <div>
-    <navBar></navBar>
+  <v-app>
+    <navBar />
     <v-content>
-      <p>Hola mesera!</p>
-      <ChooseLocation></ChooseLocation>
+      <v-container>
+        <p>Hola mesera!</p>
+        <ChooseLocation />
+        <InitialCash />
+        <v-btn>
+          <router-link :to="{ name: 'TomaComanda' }">ACEPTAR</router-link>
+        </v-btn>
+      </v-container>
     </v-content>
-  </div>
+  </v-app>
 </template>
 
 <script>
 // @ is an alias to /src
 import NavBar from "@/components/NavBar.vue";
 import ChooseLocation from "@/components/ChooseLocation.vue";
+import InitialCash from "@/components/InitialCash.vue";
 export default {
   name: "home",
   components: {
     NavBar,
-    ChooseLocation
+    ChooseLocation,
+    InitialCash
   }
 };
 </script>

@@ -1,14 +1,21 @@
 <template>
   <div>
     <p>Elige</p>
-    <button>RESTAURANTE</button>
-    <button>PARA LLEVAR</button>
+    <TwoButtons>
+      <template #button1> Restaurante</template>
+      <template #button2> Para llevar</template>
+    </TwoButtons>
   </div>
 </template>
 
 <script>
+import TwoButtons from "@/components/TwoButtons";
 
 export default {
-  name: "Service"
+  name: "Service",
+  components:{
+    TwoButtons,
+  }
 };
 </script>
+

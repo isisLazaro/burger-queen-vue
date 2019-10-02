@@ -3,7 +3,7 @@ import User from "./user";
 import DishType from "./dishType";
 
 export default {
-    DishCard,
-    User,
-    DishType
-}
+  DishCard,
+  User,
+  DishType
+};

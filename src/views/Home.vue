@@ -2,13 +2,31 @@
   <v-app>
     <navBar />
     <v-content>
-      <v-container>
-        <p>Hola mesera!</p>
-        <ChooseLocation />
-        <InitialCash />
-        <v-btn>
-          <router-link :to="{ name: 'TomaComanda' }">ACEPTAR</router-link>
-        </v-btn>
+      <v-container fluid fill-height>
+        <v-layout align-center justify-center>
+          <v-flex>
+            <v-row justify="center">
+              <p>¡Hola mesera!</p>
+            </v-row>
+            <v-form>
+              <v-row justify="center" align-content="center">
+                <v-col>
+                  <ChooseLocation />
+                </v-col>
+                <v-col>
+                  <InitialCash />
+                </v-col>
+              </v-row>
+              <v-row justify="center">
+                <v-btn color="success">
+                  <router-link :to="{ name: 'TomaComanda' }"
+                    >ACEPTAR</router-link
+                  >
+                </v-btn>
+              </v-row>
+            </v-form>
+          </v-flex>
+        </v-layout>
       </v-container>
     </v-content>
   </v-app>
@@ -28,3 +46,17 @@ export default {
   }
 };
 </script>
+<style scoped>
+p {
+  font-size: 2rem;
+}
+a {
+  text-decoration: none;
+}
+
+.v-application a {
+  color: white;
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+}
+</style>

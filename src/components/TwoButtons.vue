@@ -2,10 +2,10 @@
     <div>
         <v-btn-toggle v-model="toggle_exclusive" shaped dense>
             <v-btn>
-                <v-icon><slot name="button1">Botón 1</slot> </v-icon>
+                <v-icon color="white"><slot name="button1">Botón 1</slot> </v-icon>
             </v-btn>
             <v-btn>
-                <v-icon><slot name="button2">Botón 2</slot> </v-icon>
+                <v-icon color="white"><slot name="button2">Botón 2</slot> </v-icon>
             </v-btn>
         </v-btn-toggle>
     </div>

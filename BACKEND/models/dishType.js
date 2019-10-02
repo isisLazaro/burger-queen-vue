@@ -1,7 +1,7 @@
 import mongoose, { Schema } from "mongoose";
 
 const dishTypeSchema = new Schema({
-   // categoria : {type: Schema.ObjectId, ref: 'categoria',required:true },
+    categoria : {type: Schema.ObjectId, ref: 'categoria',required:true },
     //malicia
     nombre: { type: String, maxlength: 50, unique: true, required: true },
     //combo

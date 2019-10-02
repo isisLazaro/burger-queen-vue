@@ -1,6 +1,6 @@
 <template>
-  <v-container fill-height>
-    <v-layout align-center justify-end>
+  <v-container>
+    <v-layout justify-center>
       <v-card>
         <v-card-title>
           <p>Apertura de caja</p>

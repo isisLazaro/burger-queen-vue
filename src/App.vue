@@ -1,20 +1,15 @@
 <template>
   <div id="app">
-    
     <router-view />
   </div>
 </template>
 
 <script>
-
-import login from "./views/Login.vue"
-
+import login from "./views/Login.vue";
 
 export default {
   name: "app",
-  components: {
-   
-  }/* ,
+  components: {} /* ,
   computed: {
     logueado(){
       return this.$store.state.usuario;

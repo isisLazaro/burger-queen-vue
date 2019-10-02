@@ -49,7 +49,7 @@ export default {
     return {
       dishes: [
         {
-          name: "Hamburguesa",
+          name: "Hamburguesas",
           foto: require("../assets/imgMenu/hamburguesa.png"),
           tipo: [
             "Malicia",

@@ -26,6 +26,10 @@ name: "TwoButtons",
     text-transform:none; 
 }
 
+.theme--light.v-btn-toggle .v-btn.v-btn .v-icon {
+	color: white;
+}
+
 
 </style>
 

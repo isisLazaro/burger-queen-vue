@@ -16,6 +16,7 @@
     <router-link :to="{ name: 'TomaComanda' }">ACEPTAR</router-link>
   </div>
 </template>
+
 <script>
 import TwoButtons from "@/components/TwoButtons";
 

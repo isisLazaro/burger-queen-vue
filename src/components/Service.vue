@@ -2,8 +2,8 @@
   <div>
     <p>Elige</p>
     <TwoButtons>
-      <template #button1>Restaurante</template>
-      <template #button2>Para llevar</template>
+      <template #button1> Restaurante</template>
+      <template #button2> Para llevar</template>
     </TwoButtons>
   </div>
 </template>
@@ -18,3 +18,4 @@ export default {
   }
 };
 </script>
+

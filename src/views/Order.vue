@@ -57,7 +57,11 @@ export default {
   },
   data() {
     return {
+
+      
+
       categorias: []
+
     };
   },
   

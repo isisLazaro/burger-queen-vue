@@ -27,7 +27,7 @@ export default {
     }
   },
   methods: {
-    agregado: function(){
+    agregado: function() {
       alert(`Agregado ${this.name}`);
     }
   }
@@ -48,4 +48,3 @@ a {
   text-decoration: none;
 }
 </style>
-

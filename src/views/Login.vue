@@ -6,8 +6,13 @@
       </v-card-title>
       <v-card-text>
         <v-form>
-          <v-text-field v-model="nombre" label="Nombre" prepend-icon="mdi-account-circle" />
-          <v-text-field v-model="password"
+          <v-text-field
+            v-model="nombre"
+            label="Nombre"
+            prepend-icon="mdi-account-circle"
+          />
+          <v-text-field
+            v-model="password"
             :type="showPassword ? 'text' : 'password'"
             label="Contraseña"
             prepend-icon="mdi-lock"
@@ -18,9 +23,7 @@
       </v-card-text>
       <v-divider></v-divider>
       <v-card-actions>
-
         <v-btn @click="ingresar()" color="info">Login</v-btn>
-        
       </v-card-actions>
     </v-card>
   </v-app>
@@ -28,6 +31,9 @@
 
 <script>
 import axios from "axios";
+
+
+
 import { log } from 'util';
 
 
@@ -37,11 +43,14 @@ export default {
   },
   data() {
     return {
-      nombre: '',
-      password: '',
+      nombre: "",
+      password: "",
       showPassword: false
     };
   },
+
+  
+
   methods :{
     //aqui solo con esa petición funciona, 
     ingresar(){   
@@ -52,6 +61,7 @@ export default {
       }).catch(function(error){
         console.log(error); 
       });
+
     }
   }
 };

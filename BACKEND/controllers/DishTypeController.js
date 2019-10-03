@@ -35,7 +35,7 @@ export default {
     list: async (req,res,next) => {
         try {
             let valor = req.query.valor;
-            const reg = await models.DishType.find({$or:[{'nombre':new RegExp(valor,'i')},{'categoria':new RegExp(valor,'i')}]},{createdAt:0})
+            const reg = await models.DishType.find({$or:[{'nombre':new RegExp(valor,'i')}]},{createdAt:0})
             .sort({'createdAt': -1})
             res.status(200).json(reg);
         } catch (e){

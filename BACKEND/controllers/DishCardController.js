@@ -39,11 +39,12 @@ export default {
       const reg = await models.DishCard.find(
         {
           $or: [
-            { categoria: new RegExp(valor, "i") }
+            { categoria: new RegExp(valor, "i") },
+            { foto: new RegExp(valor, "i") }
           ]
         },
         { createdAt: 0 }
-      ).sort({ createdAt: -1 });
+      ).sort({ createdAt: 1 });
       res.status(200).json(reg);
     } catch (e) {
       res.status(500).send({
@@ -57,7 +58,8 @@ export default {
     try {
       const reg = await models.DishCard.findByIdAndUpdate(
         { _id: req.body._id },
-        { categoria: req.body.categoria }
+        { categoria: req.body.categoria },
+        { foto: req.body.foto }
       );
       res.status(200).json(reg);
     } catch (e) {

@@ -2,8 +2,8 @@
   <router-link :to="{ name: 'Platillo', params: { dish: name } }">
     <v-card class="mx-auto" :width="width">
       <v-img :src="foto" alt="foto platillo" :width="width"></v-img>
-      <v-card-title>{{ name }}</v-card-title>
-    </v-card>
+      <v-card-title>{{ name }}</v-card-title> 
+    </v-card> 
   </router-link>
 </template>
 
@@ -12,7 +12,8 @@ export default {
   name: "DishCard",
   data() {
     return {
-      width: 250
+      width: 250,
+      
     };
   },
   props: {
@@ -20,7 +21,10 @@ export default {
       type: String,
       required: true
     },
-    foto: {}
+    foto: {
+      type: String,
+      required: true
+    }
   },
   methods: {
     agregado: function(){

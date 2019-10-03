@@ -4,6 +4,7 @@ import mongoose, { Schema } from "mongoose";
 //hamburguesas, entradas, jochos
 const dishCardSchema = new Schema({
   categoria: { type: String, maxlength: 50, unique: true, required: true },
+  foto: { type: String },
   estado: { type: Number, default: 1 },
   createdAt: { type: Date, default: Date.now }
 });

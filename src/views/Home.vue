@@ -35,7 +35,7 @@
 <script>
 // @ is an alias to /src
 import NavBar from "@/components/NavBar.vue";
-import ChooseLocation from "@/components/ChooseLocation.vue";
+import ChooseLocation from "@/components/ChooseLocation2.vue";
 import InitialCash from "@/components/InitialCash.vue";
 export default {
   name: "home",

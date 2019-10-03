@@ -3,9 +3,9 @@ import userController from "../controllers/UserController";
 import auth from "../middlewares/auth";
 const router = routerx();
 
-router.post("/add", auth.verifyAdministradora, userController.add);
+router.post("/add",  userController.add);
 router.get("/query", auth.verifyAdministradora, userController.query);
-router.get("/list", auth.verifyAdministradora, userController.list);
+router.get("/list", userController.list);
 router.put("/update", auth.verifyAdministradora, userController.update);
 router.delete("/remove", auth.verifyAdministradora, userController.remove);
 router.put("/activate", auth.verifyAdministradora, userController.activate);

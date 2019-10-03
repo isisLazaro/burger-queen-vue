@@ -63,7 +63,7 @@ let router = new Router({
       }
     },
     {
-      path: "/crearusuario",
+      path: "/crearusuario/:admin",
       name: "createuser",
       component: CreateUser,
       meta: {
@@ -71,6 +71,7 @@ let router = new Router({
        }
     }]
 })
+
 router.beforeEach((to, from, next) => {
   if (to.matched.some(record => record.meta.libre)){
     next();

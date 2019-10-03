@@ -31,15 +31,15 @@
 
 <script>
 import axios from "axios";
-import { log } from "util";
-import home from "./Home.vue";
-import Admin from "./Admin";
+
+
+
+import { log } from 'util';
+
 
 export default {
   name: "App",
   components: {
-    home,
-    Admin
   },
   data() {
     return {
@@ -48,39 +48,20 @@ export default {
       showPassword: false
     };
   },
-  computed: {
-    logueado() {
-      return this.$store.state.usuario;
-    },
-    esAdministrador() {
-      return (
-        this.$store.state.usuario &&
-        this.$store.state.usuario.rol == "Administradora"
-      );
-    },
-    esMesera() {
-      return (
-        this.$store.state.usuario && this.$store.state.usuario.rol == "Mesera"
-      );
-    }
-  },
-  created() {
-    this.$store.dispatch("autoLogin");
-  },
-  methods: {
-    ingresar() {
-      axios
-        .post("http://localhost:3000/api/user/login", {
-          nombre: this.nombre,
-          password: this.password
-        })
-        .then(function(response) {
-          console.log(response.data.user);
-          console.log(response.data.tokenReturn);
-        })
-        .catch(function(error) {
-          console.log(error);
-        });
+
+  
+
+  methods :{
+    //aqui solo con esa petición funciona, 
+    ingresar(){   
+      axios.post('user/login',{nombre: this.nombre, password: this.password})
+      .then(function(response){
+        console.log(response.data.user);
+        console.log(response.data.tokenReturn);   
+      }).catch(function(error){
+        console.log(error); 
+      });
+
     }
   }
 };

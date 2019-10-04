@@ -10,7 +10,6 @@
         </v-btn-toggle>
     </div>
 </template>
-
 <script>
 export default {
 name: "TwoButtons",
@@ -26,23 +25,15 @@ data() {
 },
 props:['value'],
 };
-
 </script>
-
 <style scoped>
 .theme--light.v-btn:not(.v-btn--flat):not(.v-btn--text):not(.v-btn--outlined) {
     background-color: #3C2D89;
 }
-
 .v-btn{
     text-transform:none; 
 }
-
 .theme--light.v-btn-toggle .v-btn.v-btn .v-icon {
-	color: white;
+    color: white;
 }
-
-
 </style>
-
-

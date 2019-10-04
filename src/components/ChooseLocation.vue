@@ -1,20 +1,22 @@
 <template>
-  <div>
-    <div>
-      <p>Elige tu surcusal</p>
-      <!--aqui va el boton que me lleva a view Order.vue-->
-    <TwoButtons>
-      <template #button1>Chilpancingo</template>
-      <template #button2>Orizaba</template>
-    </TwoButtons>
-    </div>
-    <div>
-      <p>Apretura de caja</p>
-      <input type="number" />
-    </div>
-    <v-btn>ACEPTAR</v-btn>
-    <router-link :to="{ name: 'TomaComanda' }">ACEPTAR</router-link>
-  </div>
+  <v-container>
+    <v-layout justify-center>
+      <v-card>
+        <v-card-title>Elige tu surcusal</v-card-title>
+        <!--aqui va el boton que me lleva a view Order.vue-->
+        <v-card-text>
+          <TwoButtons>
+            <template #button1
+              >Chilpancingo</template
+            >
+            <template #button2
+              >Orizaba</template
+            >
+          </TwoButtons>
+        </v-card-text>
+      </v-card>
+    </v-layout>
+  </v-container>
 </template>
 
 <script>
@@ -22,8 +24,17 @@ import TwoButtons from "@/components/TwoButtons";
 
 export default {
   name: "ChooseLocation",
-   components: {
-     TwoButtons,
-  } 
+  components: {
+    TwoButtons
+  }
 };
 </script>
+
+<style scoped>
+* {
+  font-family: "Roboto", sans-serif;
+}
+.v-card__title {
+  font-weight: 500;
+}
+</style>

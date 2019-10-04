@@ -1,7 +1,7 @@
 <template>
   <v-menu>
     <template v-slot:activator="{ on }">
-      <v-app-bar-nav-icon v-on="on"></v-app-bar-nav-icon>
+      <v-app-bar-nav-icon x-large v-on="on" class="ml-5" />
     </template>
     <v-card>
       <v-list-item>
@@ -27,13 +27,7 @@ export default {
   name: "LeftMenu",
   data() {
     return {
-      items: [
-        { title: "Nueva Orden" },
-        { title: "Impresora" },
-        { title: "Productos (Stock)" },
-        { title: "Caja" },
-        { title: "Cerrar Sesión" }
-      ]
+      items: [{ title: "Nueva Orden" }, { title: "Cerrar Sesión" }]
     };
   }
 };

@@ -1,9 +1,11 @@
 <template>
   <router-link :to="{ name: 'Platillo', params: { dish: name } }">
     <v-card class="mx-auto" :width="width">
+
       <v-img :src="foto" alt="foto platillo" :width="width" :height="height"></v-img>
       <v-card-title>{{ name }}</v-card-title>
     </v-card>
+
   </router-link>
 </template>
 
@@ -13,7 +15,9 @@ export default {
   data() {
     return {
       width: 250,
+
       height: 137
+
     };
   },
   props: {
@@ -21,10 +25,13 @@ export default {
       type: String,
       required: true
     },
-    foto: {}
+    foto: {
+      type: String,
+      required: true
+    }
   },
   methods: {
-    agregado: function(){
+    agregado: function() {
       alert(`Agregado ${this.name}`);
     }
   }
@@ -45,4 +52,3 @@ a {
   text-decoration: none;
 }
 </style>
-

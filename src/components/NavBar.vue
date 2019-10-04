@@ -8,8 +8,8 @@
         <img src="../assets/logo-comdi.png" alt="logoComandi" width="200" />
       </figure>
       <v-spacer />
-      <v-btn icon @click="$root.$emit('show-all-orders')">
-        <v-icon>mdi-clipboard-check-outline</v-icon>
+      <v-btn class="mr-5" icon @click="$root.$emit('show-all-orders')">
+        <v-icon x-large>mdi-clipboard-check-outline</v-icon>
       </v-btn>
     </v-app-bar>
   </div>

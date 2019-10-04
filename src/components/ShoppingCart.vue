@@ -2,9 +2,9 @@
   <div class="container">
     <v-card class="mx-auto">
       <!-- <v-card width="30vw" height="75vh" class="mx-auto"> -->
-      <v-card-title>
-        {{ showAll ? "Pedidos para llevar" : "Pedido Actual" }}
-      </v-card-title>
+      <v-card-title>{{
+        showAll ? "Pedidos para llevar" : "Pedido Actual"
+      }}</v-card-title>
       <v-divider class="mx-4" :inset="inset" horizontal></v-divider>
       <CurrentOrder v-show="!showAll"></CurrentOrder>
       <AllOrders v-show="showAll"></AllOrders>
@@ -52,4 +52,3 @@ export default {
   flex-direction: column;
 }
 </style>
-

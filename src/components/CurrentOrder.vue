@@ -10,7 +10,6 @@
         <ShoppingCartBtn> <template v-slot:greenBtn> A cocina </template> </ShoppingCartBtn>
     </div>
 </template> 
-
 <script>
 import ShoppingCartBtn from "@/components/ShoppingCartBtn";
 export default {
@@ -92,7 +91,6 @@ export default {
         this.$root.$on('selected-button',item => {
         this.place=this.places[item]
         }),
-
         this.$root.$on('my-table',item => {
         this.table=item.join(' , ')
         })

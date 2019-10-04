@@ -1,10 +1,10 @@
 <template>
     <div>
-        <v-btn-toggle v-model="toggle_exclusive" shaped dense>
+        <v-btn-toggle v-model="toggle_exclusive" @change="selectedButton" shaped dense>
             <v-btn>
                 <v-icon color="white"><slot name="button1">Botón 1</slot> </v-icon>
             </v-btn>
-            <v-btn>
+            <v-btn >
                 <v-icon color="white"><slot name="button2">Botón 2</slot> </v-icon>
             </v-btn>
         </v-btn-toggle>
@@ -15,15 +15,16 @@
 export default {
 name: "TwoButtons",
 methods: {
-    alerti(event){
-      console.log('Holi')
-    }
+    selectedButton(){
+        this.$root.$emit('selected-button',this.toggle_exclusive)
+    },
   },
 data() {
     return {
         toggle_exclusive: null,
     }
 },
+props:['value'],
 };
 
 </script>

@@ -1,7 +1,6 @@
 <template>
     <div>
-        <v-card-text v-show="inRestaurant">Restaurante</v-card-text>
-        <v-card-text v-show="carryout">Para llevar</v-card-text>
+        <v-card-text v-text="place"></v-card-text>
         <v-card-text> </v-card-text>
         <v-data-table :headers="headers" :items="platillos" item-key="name" group-by="category" class="elevation-1"
             show-group-by hide-default-header></v-data-table>
@@ -18,6 +17,17 @@ export default {
     name: "CurrentOrder",
     components:{
       ShoppingCartBtn,
+    },
+  data() {
+    return {
+      place:'',
+      places:['Restaurante', 'Para llevar'],
+    }
+  },
+    created() {
+    this.$root.$on('selected-button',item =>{
+    this.place=this.places[item]
+    })
     },
 }
 </script>

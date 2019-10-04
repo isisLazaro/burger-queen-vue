@@ -1,9 +1,10 @@
 <template>
   <div>
     <p>Elige</p>
-    <TwoButtons ref="twoButtons">
-      <template #button1 :value="buttons.button1" > Restaurante</template>
-      <template #button2 :value="buttons.button2"> Para llevar</template>
+    <!-- <p v-text="place"></p> -->
+    <TwoButtons>
+      <template #button1 > Restaurante</template>
+      <template #button2 > Para llevar</template>
     </TwoButtons>
   </div>
 </template>
@@ -16,22 +17,16 @@ export default {
   components:{
     TwoButtons,
   },
-  data() {
-    return 
-    buttons: [
-                {
-                    id: 1,
-                    value: "Restaurante"
-                },{
-                    id: 2,
-                    value: "Para llevar"
-                },
-  },
-  // methods: {
-  //    clicked() {
-  //     let place=this.$refs.twoButtons.toggle_exclusive
-  //     console.log(place)
+  // data() {
+  //   return {
+  //     place:'Holi',
+  //     places:['Restaurante', 'Para llevar'],
+  //   }
   // },
+  // created() {
+  //   this.$root.$on('selected-button',item =>{
+  //   this.place=this.places[item]
+  //   })
   // },
 };
 </script>

@@ -7,6 +7,7 @@
         flat
         label="Observaciones"
         prepend-inner-icon="mdi-pencil"
+        disabled
       ></v-textarea>
     </v-card-title>
   </v-card>

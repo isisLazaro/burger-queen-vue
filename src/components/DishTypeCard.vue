@@ -1,6 +1,9 @@
 <template>
-  <v-card class="mx-auto" width="550">
-    <v-card-title>Nombre Platillo</v-card-title>
+
+
+  <v-card class="mx-auto" width="600">
+    <v-card-title>{{ name }}</v-card-title>
+
     <v-divider />
     <v-card-text>
       <v-container>
@@ -38,6 +41,8 @@
 </template>
 
 <script>
+
+
 export default {
   name: "DishTypeCard",
   data() {
@@ -45,15 +50,22 @@ export default {
       numDishes: 0 //FIXME:
     };
   },
-  methods: {
+  props: {
+    name: {
+      type: String,
+      required: true
+    }
+    },
+    methods: {
     addDish() {
       this.numDishes += 1;
     },
     removeDish() {
       this.numDishes -= 1;
     }
+    }
   }
-};
+
 </script>
 
 <style scoped></style>

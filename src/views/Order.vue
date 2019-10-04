@@ -1,39 +1,32 @@
 <template>
   <v-app>
     <NavBar></NavBar>
-   
     <v-content>
       <v-container>
         <v-row>
           <v-col cols="8">
             <v-row>
               <v-col>
-                <Service />
+                <Service/>
               </v-col>
               <v-col>
- 
-                
                 <ChooseTable />
               </v-col>
             </v-row>
             <v-row>
               <v-col cols="6" v-for="categoria in categorias" :key>
-              <!--si dejo :name = categorias me pinta toda la data cuando clik, todas las categorias -->
-              <!--la solucion seria crear otravdishcard y meterla en la dishcard principal??-->
                 <DishCard :name="categoria.categoria" :foto="categoria.foto" />
               </v-col>
             </v-row>
           </v-col>
           <v-col>
             <!-- <Service /> -->
-            
             <ShoppingCart />
           </v-col>
         </v-row>
       </v-container>
     </v-content>
   </v-app>
-  
 </template>
 
 <script>
@@ -57,30 +50,23 @@ export default {
   },
   data() {
     return {
-
-      
-
       categorias: []
-
     };
   },
   
     created() {
       this.listarDishCard()
-    }
-  ,
+    },
   methods : {
     listarDishCard(){
       let me=this;
       axios.get('dishcard/list')
       .then(function (response){
-        //response.data es un arreglo de objetos y cada objeto es una categoria
         console.log(response.data)
         me.categorias = response.data
       })
       .catch(function (error) {
-        console.log(error);
-        
+        console.log(error);  
       })
     }
   }

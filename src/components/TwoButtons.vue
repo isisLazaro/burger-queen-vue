@@ -14,7 +14,18 @@
 <script>
 export default {
 name: "TwoButtons",
+methods: {
+    alerti(event){
+      console.log('Holi')
+    }
+  },
+data() {
+    return {
+        toggle_exclusive: null,
+    }
+},
 };
+
 </script>
 
 <style scoped>

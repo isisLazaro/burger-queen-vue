@@ -1,6 +1,8 @@
 <template>
     <div>
-        <v-card-text>Ej: Restaurante Mesa 3</v-card-text>
+        <v-card-text v-show="inRestaurant">Restaurante</v-card-text>
+        <v-card-text v-show="carryout">Para llevar</v-card-text>
+        <v-card-text> </v-card-text>
         <v-data-table :headers="headers" :items="platillos" item-key="name" group-by="category" class="elevation-1"
             show-group-by hide-default-header></v-data-table>
         <v-card-actions>

@@ -7,7 +7,7 @@
           <v-col cols="8">
             <v-row>
               <v-col>
-                <Service />
+                <Service/>
               </v-col>
               <v-col>
                 <ChooseTable />

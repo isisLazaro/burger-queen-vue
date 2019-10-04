@@ -1,9 +1,9 @@
 <template>
   <div>
     <p>Elige</p>
-    <TwoButtons>
-      <template #button1> Restaurante</template>
-      <template #button2> Para llevar</template>
+    <TwoButtons ref="twoButtons">
+      <template #button1 v-on="clicked()"> Restaurante</template>
+      <template #button2 v-on="clicked()"> Para llevar</template>
     </TwoButtons>
   </div>
 </template>
@@ -15,7 +15,13 @@ export default {
   name: "Service",
   components:{
     TwoButtons,
-  }
+  },
+  methods: {
+     clicked() {
+      let place=this.$refs.twoButtons.toggle_exclusive
+      console.log(place)
+  },
+  },
 };
 </script>
 

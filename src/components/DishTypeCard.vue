@@ -1,20 +1,30 @@
 <template>
-  <v-card class="mx-auto" width="600">
+  <v-card class="mx-auto" width="550">
     <v-card-title>Nombre Platillo</v-card-title>
     <v-divider />
-    <v-card-actions>
+    <v-card-text>
       <v-container>
-        <v-row>
-          <v-col>
+        <v-row no-gutters>
+          <v-col cols="5">
             <v-btn>combo</v-btn>
             <v-btn>sencillo</v-btn>
           </v-col>
-          <v-col>
-            <v-btn v-on:click="addDish">+</v-btn>
-            <v-text-field v-model="numDishes" id readonly solo />
-            <v-btn v-on:click="removeDish" :disabled="numDishes < 1">-</v-btn>
+          <v-col cols="6">
+            <v-row no-gutters>
+              <v-col>
+                <v-btn v-on:click="addDish" left="true">+</v-btn>
+              </v-col>
+              <v-col>
+                <v-text-field v-model="numDishes" id readonly solo />
+              </v-col>
+              <v-col>
+                <v-btn v-on:click="removeDish" :disabled="numDishes < 1"
+                  >-</v-btn
+                >
+              </v-col>
+            </v-row>
           </v-col>
-          <v-col>
+          <v-col cols="1" class="fill-height align-end">
             <router-link :to="{ name: 'EditarPlatillo' }">
               <v-btn icon>
                 <v-icon>mdi-pencil</v-icon>
@@ -23,7 +33,7 @@
           </v-col>
         </v-row>
       </v-container>
-    </v-card-actions>
+    </v-card-text>
   </v-card>
 </template>
 
@@ -45,3 +55,5 @@ export default {
   }
 };
 </script>
+
+<style scoped></style>

@@ -10,18 +10,22 @@
                 <h1>{{ dish }}</h1>
               </v-col>
               <v-col>
-                <h1> +  Agregar cliente  </h1>
+                <v-btn>
+                  <slot name="greenBtn">Agregar Cliente</slot>
+                </v-btn>
               </v-col>
             </v-row>
             <v-row>
               <v-col cols="6" v-for="tipo in tipos" :key>
-              <DishTypeCard :name="tipo.nombre" />
+              <DishTypeCard :tipos="tipo.nombre" :combo="tipo.combo" :sencilla="tipo.sencilla"/>
               </v-col>
             </v-row>
-              <router-link :to="{ name: 'TomaComanda' }">regresar</router-link>
+                <v-btn>
+                  <slot name="greenBtn"></slot>
+                <router-link :to="{ name: 'TomaComanda' }">REGRESAR</router-link>  
+                </v-btn>
           </v-col>
           <v-col>
-           
             <ShoppingCart />
           </v-col>
         </v-row>
@@ -47,8 +51,8 @@ export default {
   },
   data() {
     return {
-      tipos:[] 
-     
+      tipos:[],
+      
     };
   },
   created() {
@@ -60,8 +64,9 @@ export default {
       let me =this;
       axios.get('dishtype/list')
       .then(function (response){
-        //console.log(response.data)
-        me.tipos=response.data   
+        console.log(response.data)
+        me.tipos=response.data 
+         
       })
       .catch(function (error) {
         console.log(error);  
@@ -70,3 +75,10 @@ export default {
   }
 };
 </script>
+
+<style scoped>
+.theme--light.v-btn:not(.v-btn--flat):not(.v-btn--text):not(.v-btn--outlined) {
+  background-color: #42c157;
+  color: white;
+}
+</style>

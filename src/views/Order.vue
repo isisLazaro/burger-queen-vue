@@ -15,7 +15,7 @@
             </v-row>
             <v-row>
               <v-col cols="6" v-for="categoria in categorias" :key>
-                <DishCard :name="categoria.categoria" :foto="categoria.foto" />
+                <DishCard :name="categoria.categoria" :foto="categoria.foto"  />
               </v-col>
             </v-row>
           </v-col>

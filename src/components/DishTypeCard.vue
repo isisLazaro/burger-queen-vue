@@ -6,8 +6,8 @@
     <v-card-text>
       <v-row no-gutters align="center">
         <v-col cols="6">
-          <v-btn x-small>combo</v-btn>
-          <v-btn x-small>sencillo</v-btn>
+          <v-btn small>combo</v-btn>
+          <v-btn small>sencillo</v-btn>
         </v-col>
         <v-col cols="5">
           <v-row no-gutters align="center">
@@ -15,7 +15,7 @@
               <v-btn v-on:click="addDish" x-small>+</v-btn>
             </v-col>
             <v-col>
-              <v-text-field v-model="numDishes" id readonly solo width="50vw" />
+              <v-text-field v-model="numDishes" id readonly solo />
             </v-col>
             <v-col>
               <v-btn v-on:click="removeDish" x-small :disabled="numDishes < 1"

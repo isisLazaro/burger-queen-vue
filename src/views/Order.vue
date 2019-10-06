@@ -21,7 +21,6 @@
           </v-col>
           <v-col>
             <!-- <Service /> -->
-            <ShoppingCart />
           </v-col>
         </v-row>
       </v-container>

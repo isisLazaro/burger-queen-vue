@@ -1,15 +1,14 @@
 <template>
   <v-app>
     <navBar />
-    <v-content>
       <v-container fluid fill-height>
-        <v-layout align-center justify-center>
+        <v-layout align-start justify-center>
           <v-flex>
             <v-row justify="center">
               <p>¡Hola mesera!</p>
             </v-row>
             <v-form>
-              <v-row justify="center" align-content="center">
+              <v-row justify="right" align-content="right">
                 <v-col>
                   <ChooseLocation />
                 </v-col>
@@ -28,7 +27,6 @@
           </v-flex>
         </v-layout>
       </v-container>
-    </v-content>
   </v-app>
 </template>
 
@@ -43,7 +41,7 @@ export default {
     NavBar,
     ChooseLocation,
     InitialCash
-  }
+  },
 };
 </script>
 <style scoped>

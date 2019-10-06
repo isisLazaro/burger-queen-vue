@@ -1,6 +1,5 @@
 <template>
   <div>
-    <NavBar></NavBar>
     <v-content>
       <h1>Personaliza el pedido</h1>
       <v-container>
@@ -19,12 +18,10 @@
 </template>
 
 <script>
-import NavBar from "@/components/NavBar.vue";
 import CustomizeOrder from "@/components/CustomizeOrder.vue";
 import Building from "@/components/Building.vue";
 export default {
   components: {
-    NavBar,
     Building,
     CustomizeOrder
   }

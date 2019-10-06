@@ -87,6 +87,19 @@ export default {
   ]
     }
   },
+  props: {
+    tipos: {
+      type: String,
+      required: true
+    },
+    combo: {
+      type: Number
+    },
+    sencilla: {
+      type: Number
+    }, counter:
+    {}
+    },
     created() {
         this.$root.$on('selected-button',item => {
         this.place=this.places[item]

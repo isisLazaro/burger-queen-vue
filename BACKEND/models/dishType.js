@@ -8,26 +8,11 @@ const dishTypeSchema = new Schema({
   //combo
   //default: isCombo
   //Combo: { type: Boolean , required: true},
-  precio: [
-    {
-      sencillo: {
-        type: Number
-      },
-      combo: {
-        type: Number
-      },
-      chica: {
-        type: Number
-      },
-      mediana: {
-        type: Number
-      },
-      grande: {
-        type: Number
-      }
-    }
-  ],
-
+  combo:{ type: Number },
+  sencilla:{ type: Number },
+  chica: { type: Number },
+  mediana: { type: Number },
+  grande: { type: Number }, 
   estado: { type: Number, default: 1 },
   createdAt: { type: Date, default: Date.now }
 });

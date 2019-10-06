@@ -19,7 +19,6 @@
     </v-row>
   </div>
 </template>
-
 <script>
 // @ is an alias to /src
 import NavBar from "@/components/NavBar.vue";
@@ -28,8 +27,6 @@ import ChooseTable from "@/components/ChooseTable.vue";
 import DishCard from "@/components/DishCard.vue";
 import ShoppingCart from "@/components/ShoppingCart.vue";
 import axios from "axios";
-
-
 export default {
   name: "Order",
   components: {

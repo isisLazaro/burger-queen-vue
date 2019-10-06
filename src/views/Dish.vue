@@ -20,15 +20,12 @@
     </v-row>
   </div>
 </template>
-
 <script>
 import NavBar from "@/components/NavBar.vue";
 import DishTypeCard from "@/components/DishTypeCard.vue";
 import ShoppingCart from "@/components/ShoppingCart";
 import axios from "axios";
-
 export default {
-
   name: "Dish",
   props: ["dish"],
   components: {

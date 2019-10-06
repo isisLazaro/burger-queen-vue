@@ -1,33 +1,24 @@
 <template>
-  <v-app>
-    <NavBar></NavBar>
-    <v-content>
-      <v-container>
+  <div>
+    <v-row>
+      <v-col cols="12">
         <v-row>
-          <v-col cols="8">
-            <v-row>
-              <v-col>
-                <h1>{{ dish }}</h1>
-              </v-col>
-              <v-col>
-                <h1> +  Agregar cliente  </h1>
-              </v-col>
-            </v-row>
-            <v-row>
-              <v-col cols="6" v-for="tipo in tipos" :key>
-              <DishTypeCard :name="tipo.nombre" />
-              </v-col>
-            </v-row>
-              <router-link :to="{ name: 'TomaComanda' }">regresar</router-link>
+          <v-col>
+            <h1>{{ dish }}</h1>
           </v-col>
           <v-col>
-           
-            <ShoppingCart />
+            <h1> + Agregar cliente </h1>
           </v-col>
         </v-row>
-      </v-container>
-    </v-content>
-  </v-app>
+        <v-row>
+          <v-col cols="6" v-for="tipo in tipos" :key>
+            <DishTypeCard :name="tipo.nombre" />
+          </v-col>
+        </v-row>
+        <router-link :to="{ name: 'TomaComanda' }">regresar</router-link>
+      </v-col>
+    </v-row>
+  </div>
 </template>
 
 <script>

@@ -2,10 +2,16 @@
   <div>
     <v-content>
       <h1>Personaliza el pedido</h1>
-
-      <CustomizeOrder />
-      <Building />
-
+      <v-container>
+        <v-row>
+          <v-col>
+            <Building />
+          </v-col>
+          <v-col>
+            <CustomizeOrder />
+          </v-col>
+        </v-row>
+      </v-container>
       <router-link :to="{ name: 'Platillo' }">regresar</router-link>
     </v-content>
   </div>

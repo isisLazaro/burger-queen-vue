@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <v-card class="mx-auto" width="25vw" height="70vh">
+    <v-card class="mx-auto"  height="70vh">
       <!-- <v-card width="30vw" height="75vh" class="mx-auto"> -->
       <v-card-title>{{
         showAll ? "Pedidos para llevar" : "Pedido Actual"

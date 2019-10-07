@@ -23,7 +23,12 @@
       </v-card-text>
       <v-divider></v-divider>
       <v-card-actions>
-        <v-btn @click="ingresar()" color="info">Login</v-btn>
+<!--         <v-btn @click="ingresar()" color="info">Login</v-btn>--> 
+        <v-btn color="info">
+          <router-link :to="{ name: 'home' }"
+                    >LOGIN</router-link
+                  >
+        </v-btn>
       </v-card-actions>
     </v-card>
   </v-app>

@@ -8,12 +8,12 @@
       <v-container>
         <v-row no-gutters>
           <v-col cols="5">
-            <v-btn>Combo {{ combo }}</v-btn>
-            <v-btn>Sencilla {{ sencilla}}</v-btn>
+            <v-btn v-on:click="agregarCarritoCombo" v-on:enviarTipo="pintarTipo($event)">Combo {{ combo }}</v-btn>
+            <v-btn  v-on:click="agregarCarritoSencilla">Sencilla {{ sencilla}}</v-btn>
           </v-col>
           <v-col cols="6">
-           <!--  <v-row no-gutters>
-              <!--aqui deben mandar la info a el carrito de compras 
+           <v-row no-gutters>
+              
               <v-col>
                 <v-btn v-on:click="addDish" left="true">+</v-btn>
               </v-col>
@@ -25,7 +25,7 @@
                   >-</v-btn
                 >
               </v-col>
-            </v-row> -->
+            </v-row> 
           </v-col>
           <v-col cols="1" class="fill-height align-end">
             <router-link :to="{ name: 'EditarPlatillo' }">
@@ -41,13 +41,18 @@
 </template>
 
 <script>
+import { log } from 'util';
 
 
 export default {
   name: "DishTypeCard",
   data() {
     return {
-      numDishes: 0 //FIXME:
+      numDishes: 2,
+      pedidos : [],
+      tipo : [],
+      resultadoCombo : [],
+      resultadoSencilla : []
     };
   },
   props: {
@@ -65,14 +70,62 @@ export default {
     methods: {
     addDish() {
       this.numDishes += 1;
-
+     
+      
     },
     removeDish() {
       this.numDishes -= 1;
+
+    },
+
+    agregarCarritoCombo(){
+      let me = this;
+      me.pedidos = this.combo
+      let  tipo = this.name
+      let resultadoCombo = me.pedidos  * this.numDishes
+      let objetoPrueba = {nombre:"",
+      total:""};
+      objetoPrueba.nombre = tipo;
+      objetoPrueba.total = resultadoCombo;
+      console.log(objetoPrueba);
+      this.$root.$emit('enviarTipo', objetoPrueba);
+      /* let me = this;
+      me.pedidos = this.combo
+      let  tipo = this.name
+      let resultadoCombo = me.pedidos  * this.numDishes
+      console.log(tipo + " " + resultadoCombo);
+      this.$root.$emit('enviarTipo', tipo);
+      this.$root.$emit('enviarResultado', resultadoCombo); */
+    },
+    agregarCarritoSencilla(){
+      let me = this;
+      me.pedidos = this.sencilla
+      let  tipo = this.name
+      let resultadoSencilla = me.pedidos  * this.numDishes
+      let objetoPrueba = {nombre:"",
+      total:""};
+      objetoPrueba.nombre = tipo;
+      objetoPrueba.total = resultadoSencilla;
+      console.log(objetoPrueba);
+      this.$root.$emit('enviarTipo', objetoPrueba);
     }
     }
   }
 
 </script>
 
-<style scoped></style>
+
+<style scoped>
+p {
+  font-size: 2rem;
+}
+a {
+  text-decoration: none;
+}
+
+.v-application a {
+  color: white;
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+}
+</style>

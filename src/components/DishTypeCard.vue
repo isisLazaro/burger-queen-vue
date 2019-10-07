@@ -2,7 +2,7 @@
 
 
   <v-card class="mx-auto" width="600">
-    <v-card-title>{{ tipos }}</v-card-title>
+    <v-card-title>{{ name }}</v-card-title>
     <v-divider />
     <v-card-text>
       <v-container>
@@ -51,7 +51,7 @@ export default {
     };
   },
   props: {
-    tipos: {
+    name: {
       type: String,
       required: true
     },

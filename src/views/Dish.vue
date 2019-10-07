@@ -7,15 +7,21 @@
             <h1>{{ dish }}</h1>
           </v-col>
           <v-col>
-            <h1> + Agregar cliente </h1>
+            <!--boton -->
+            <v-btn v-on:click="agregarCliente" color="success">
+              Agregar Cliente +
+            </v-btn>
           </v-col>
         </v-row>
         <v-row>
           <v-col cols="6" v-for="tipo in tipos" :key>
-            <DishTypeCard :name="tipo.nombre" />
+            <DishTypeCard :name="tipo.nombre" :combo = "tipo.combo" :sencilla = "tipo.sencilla" />
           </v-col>
         </v-row>
-        <router-link :to="{ name: 'TomaComanda' }">regresar</router-link>
+          <v-btn color="success">
+            <router-link :to="{ name: 'TomaComanda' }"
+                    >REGRESAR</router-link>
+          </v-btn>
       </v-col>
     </v-row>
   </div>
@@ -54,7 +60,27 @@ export default {
       .catch(function (error) {
         console.log(error);  
       })
+    },
+    agregarCliente(){
+      console.log("holicliente");
+      
     }
   }
 };
 </script>
+
+</script>
+<style scoped>
+p {
+  font-size: 2rem;
+}
+a {
+  text-decoration: none;
+}
+
+.v-application a {
+  color: white;
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+}
+</style>

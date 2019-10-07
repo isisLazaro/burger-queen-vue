@@ -2,16 +2,23 @@
     <div>
         <v-card-text v-text="place"></v-card-text>
         <v-card-text @my-table="myTable()" v-text="table"> </v-card-text>
-        <v-data-table :headers="headers" :items="platillos" item-key="name" group-by="category" class="elevation-1"
-            show-group-by hide-default-header></v-data-table>
-        <v-card-actions>
-            <v-card-text>Total : $$$$$$$$ </v-card-text>
+        <!--en vi card data debe ir como arriba pero en agregar cliente-->
+        <p v-for="order in orders">{{order.nombre}}  {{order.total}}</p>
+<!--         <v-data-table 
+        
+                      :headers="headers"
+                     
+                      item-key="name" 
+                      group-by="category" class="elevation-1"show-group-by hide-default-header></v-data-table>
+        <v-card-actions> -->
+            <v-card-text>Total : {{tipo}} {{ resultadoCombo}} </v-card-text>
         </v-card-actions>
         <ShoppingCartBtn> <template v-slot:greenBtn> A cocina </template> </ShoppingCartBtn>
     </div>
 </template> 
 <script>
 import ShoppingCartBtn from "@/components/ShoppingCartBtn";
+import { log } from 'util';
 export default {
     name: "CurrentOrder",
     components:{
@@ -21,6 +28,9 @@ export default {
     return {
       place:'',
       table:'',
+      orders:[],
+      tipo:'Holi',
+      resultadoCombo: "holo",
       places:['Restaurante', 'Para llevar'],
             headers: [
         {
@@ -32,81 +42,37 @@ export default {
           text: "precio",
           value: "price"
         }
-      ],
-      platillos: [
-    {
-      name: "Frozen Yogurt",
-      category: "Cliente 1",
-      price: 5
-    },
-    {
-      name: "Ice cream sandwich",
-      category: "Cliente 2",
-      price: 5
-    },
-    {
-      name: "Eclair",
-      category: "Cliente 3",
-      price: 5
-    },
-    {
-      name: "Cupcake",
-      category: "Cliente 1",
-      price: 5
-    },
-    {
-      name: "Gingerbread",
-      category: "Cliente 2",
-      price: 5
-    },
-    {
-      name: "Jelly bean",
-      category: "Cliente 3",
-      price: 5
-    },
-    {
-      name: "Lollipop",
-      category: "Cliente 4",
-      price: 5
-    },
-    {
-      name: "Honeycomb",
-      category: "Cliente 1",
-      price: 5
-    },
-    {
-      name: "Donut",
-      category: "Cliente 2",
-      price: 5
-    },
-    {
-      name: "KitKat",
-      category: "Cliente 5",
-      price: 5
-    }
-  ]
+      ]
     }
   },
   props: {
-    tipos: {
-      type: String,
-      required: true
-    },
-    combo: {
-      type: Number
-    },
-    sencilla: {
-      type: Number
-    }, counter:
-    {}
+  
     },
     created() {
+
+     
         this.$root.$on('selected-button',item => {
         this.place=this.places[item]
         }),
         this.$root.$on('my-table',item => {
         this.table=item.join(' , ')
+        }),
+        /* this.$root.$on('enviarTipo',item=>{
+          this.tipo=item
+        }), */
+        /* this.$root.$on('enviarResultado',item=>{
+          this.resultadoCombo=item
+        }), */
+        this.$root.$on('enviarTipo', item =>{
+          
+          this.orders.push(item)
+          console.log(this.orders)
         })
-    },
+    }/* ,
+    methods: {
+      pintar(){
+        console.log("holi pintando")
+      }
+    }*/
 }
-</script>
+</script> 

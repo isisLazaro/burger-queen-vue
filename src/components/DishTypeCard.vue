@@ -3,45 +3,51 @@
     <v-card-title>{{ name }}</v-card-title>
     <v-divider />
     <v-card-text>
-      <v-row no-gutters align="center">
-        <v-col cols="6">
-          <v-btn small>Combo {{ combo }}</v-btn>
-          <v-btn small>Sencilla {{ sencilla }}</v-btn>
-        </v-col>
-        <v-col cols="5">
-          <v-row no-gutters align="center">
-            <!--aqui deben mandar la info a el carrito de compras -->
-            <v-col>
-              <v-btn v-on:click="addDish" left="true" small>+</v-btn>
-            </v-col>
-            <v-col>
-              <v-text-field v-model="numDishes" id readonly solo />
-            </v-col>
-            <v-col>
-              <v-btn v-on:click="removeDish" small :disabled="numDishes < 1"
-                >-</v-btn
-              >
-            </v-col>
-          </v-row>
-        </v-col>
-        <v-col cols="1">
-          <router-link :to="{ name: 'EditarPlatillo' }">
-            <v-btn icon>
-              <v-icon>mdi-pencil</v-icon>
-            </v-btn>
-          </router-link>
-        </v-col>
-      </v-row>
+      <v-container>
+        <v-row no-gutters>
+          <v-col cols="5">
+            <v-btn v-on:click="agregarCarritoCombo" v-on:enviarTipo="pintarTipo($event)">Combo {{ combo }}</v-btn>
+            <v-btn  v-on:click="agregarCarritoSencilla">Sencilla {{ sencilla}}</v-btn>
+          </v-col>
+          <v-col cols="6">
+           <v-row no-gutters>
+              
+              <v-col>
+                <v-btn v-on:click="addDish" left="true">+</v-btn>
+              </v-col>
+              <v-col>
+                <v-text-field v-model="numDishes" id readonly solo />
+              </v-col>
+              <v-col>
+                <v-btn v-on:click="removeDish" :disabled="numDishes < 1"
+                  >-</v-btn
+                >
+              </v-col>
+            </v-row> 
+          </v-col>
+          <v-col cols="1" class="fill-height align-end">
+            <router-link :to="{ name: 'EditarPlatillo' }">
+              <v-btn icon>
+                <v-icon>mdi-pencil</v-icon>
+              </v-btn>
+            </router-link>
+          </v-col>
+        </v-row>
+      </v-container>
     </v-card-text>
   </v-card>
 </template>
-
 <script>
+import { log } from 'util';
 export default {
   name: "DishTypeCard",
   data() {
     return {
-      numDishes: 0 //FIXME:
+      numDishes: 2,
+      pedidos : [],
+      tipo : [],
+      resultadoCombo : [],
+      resultadoSencilla : []
     };
   },
   props: {
@@ -55,23 +61,61 @@ export default {
     sencilla: {
       type: Number
     }
-  },
-  methods: {
+    },
+    methods: {
     addDish() {
       this.numDishes += 1;
+     
+      
     },
     removeDish() {
       this.numDishes -= 1;
+    },
+    agregarCarritoCombo(){
+      let me = this;
+      me.pedidos = this.combo
+      let  tipo = this.name
+      let resultadoCombo = me.pedidos  * this.numDishes
+      let objetoPrueba = {nombre:"",
+      total:""};
+      objetoPrueba.nombre = tipo;
+      objetoPrueba.total = resultadoCombo;
+      console.log(objetoPrueba);
+      this.$root.$emit('enviarTipo', objetoPrueba);
+      /* let me = this;
+      me.pedidos = this.combo
+      let  tipo = this.name
+      let resultadoCombo = me.pedidos  * this.numDishes
+      console.log(tipo + " " + resultadoCombo);
+      this.$root.$emit('enviarTipo', tipo);
+      this.$root.$emit('enviarResultado', resultadoCombo); */
+    },
+    agregarCarritoSencilla(){
+      let me = this;
+      me.pedidos = this.sencilla
+      let  tipo = this.name
+      let resultadoSencilla = me.pedidos  * this.numDishes
+      let objetoPrueba = {nombre:"",
+      total:""};
+      objetoPrueba.nombre = tipo;
+      objetoPrueba.total = resultadoSencilla;
+      console.log(objetoPrueba);
+      this.$root.$emit('enviarTipo', objetoPrueba);
+    }
     }
   }
-};
 </script>
-
 <style scoped>
-.v-card__title {
-  padding: 2.5%;
+p {
+  font-size: 2rem;
 }
-.v-card__text {
-  padding: 1% 2.5%;
+a {
+  text-decoration: none;
+}
+.v-application a {
+  color: white;
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
 }
 </style>
+Contraer

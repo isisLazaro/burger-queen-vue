@@ -1,17 +1,17 @@
 <template>
   <div>
     <v-select
-    @change="selectedTable"
-    v-model="table"
-    :items="items"
-    outlined
-    multiple
-    chips
-    deletable-chips="true"
-    dense="true"
-    label="Seleccionar mesa"
-    background-color="#8a7cd4"
-    item-color="#8a7cd4"
+      @change="selectedTable"
+      v-model="table"
+      :items="items"
+      outlined
+      multiple
+      chips
+      deletable-chips="true"
+      dense="true"
+      label="Seleccionar mesa"
+      background-color="#8a7cd4"
+      item-color="#8a7cd4"
     ></v-select>
   </div>
 </template>
@@ -33,14 +33,14 @@ export default {
         "barra lugar 9",
         "barra lugar 10"
       ],
-      table:[]
+      table: []
     };
   },
   methods: {
-    selectedTable(){
-       this.$root.$emit('my-table',this.table)
+    selectedTable() {
+      this.$root.$emit("my-table", this.table);
     }
-  },
+  }
 };
 </script>
 <style scoped>
@@ -49,4 +49,3 @@ export default {
   /* v-icon notranslate mdi mdi-menu-down theme--light */
 }
 </style>
-

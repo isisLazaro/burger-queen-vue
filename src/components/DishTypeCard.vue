@@ -1,6 +1,4 @@
 <template>
-
-
   <v-card class="mx-auto" width="600">
     <v-card-title>{{ name }}</v-card-title>
     <v-divider />
@@ -39,11 +37,8 @@
     </v-card-text>
   </v-card>
 </template>
-
 <script>
 import { log } from 'util';
-
-
 export default {
   name: "DishTypeCard",
   data() {
@@ -75,9 +70,7 @@ export default {
     },
     removeDish() {
       this.numDishes -= 1;
-
     },
-
     agregarCarritoCombo(){
       let me = this;
       me.pedidos = this.combo
@@ -111,10 +104,7 @@ export default {
     }
     }
   }
-
 </script>
-
-
 <style scoped>
 p {
   font-size: 2rem;
@@ -122,10 +112,10 @@ p {
 a {
   text-decoration: none;
 }
-
 .v-application a {
   color: white;
   font-family: "Roboto", sans-serif;
   font-weight: 700;
 }
 </style>
+Contraer

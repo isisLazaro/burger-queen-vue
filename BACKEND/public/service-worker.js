@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "precache-manifest.47891d01381c3a3571a87eabf13febc5.js"
+  "precache-manifest.15d26e1006dc0d9db55c898f0f210be4.js"
 );
 
 workbox.core.setCacheNameDetails({prefix: "burger-queen"});

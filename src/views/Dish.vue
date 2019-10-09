@@ -1,8 +1,8 @@
-<template>
-  <div>
+<template  >
+  <div >
     <v-row>
-      <v-col cols="12">
-        <v-row>
+      <v-col cols="12" >
+        <v-row >
           <v-col>
             <h1>{{ dish }}</h1>
           </v-col>
@@ -13,9 +13,14 @@
             </v-btn>
           </v-col>
         </v-row>
-        <v-row>
-          <v-col cols="6" v-for="tipo in tipos" :key>
-            <DishTypeCard :name="tipo.nombre" :combo = "tipo.combo" :sencilla = "tipo.sencilla" />
+        <v-row >
+          <v-col cols="6" v-for="tipo in filtertipos" :key >
+            <DishTypeCard  
+            :name="tipo.nombre" 
+            :combo = "tipo.combo" 
+            :sencilla = "tipo.sencilla" 
+            :categoria = "tipo.categoria" />
+
           </v-col>
         </v-row>
           <v-btn color="success">
@@ -33,7 +38,8 @@ import ShoppingCart from "@/components/ShoppingCart";
 import axios from "axios";
 export default {
   name: "Dish",
-  props: ["dish"],
+  props: ["dish", "idCat", "categorias"],
+        
   components: {
     NavBar,
     DishTypeCard,
@@ -41,28 +47,43 @@ export default {
   },
   data() {
     return {
-      tipos:[] 
+      tipos:[] ,
+
      
     };
   },
   created() {
-    this.listarDishType()
+    this.listarDishType(),
+    this.crearArray()
+  },
+  computed : {
+    filtertipos(){
+      return this.tipos.filter(dishtype => dishtype.categoria === this.dish)
+    }
   },
   methods :{
-    
-    listarDishType(){   
+    crearArray(){
+     // console.log(this.categorias);
+      
+      
+    },
+    listarDishType(){ 
+      
+     // console.log(this.dish)
+        
       let me =this;
       axios.get('dishtype/list')
       .then(function (response){
-        //console.log(response.data)
+       // console.log(response.data)
         me.tipos=response.data   
+        
       })
       .catch(function (error) {
         console.log(error);  
       })
     },
     agregarCliente(){
-      console.log("holicliente");
+      //console.log("holicliente");
       
     }
   }

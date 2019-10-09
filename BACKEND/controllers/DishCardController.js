@@ -4,7 +4,7 @@ export default {
   //en seccion administradora
   add: async (req, res, next) => {
     try {
-      console.log("Body", req.body);
+      //console.log("Body", req.body);
       const reg = await models.DishCard.create(req.body);
       res.status(200).json(reg);
     } catch (e) {

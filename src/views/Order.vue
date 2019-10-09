@@ -12,7 +12,7 @@
         </v-row>
         <v-row>
           <v-col cols="6" v-for="categoria in categorias" :key>
-            <DishCard :name="categoria.categoria" :foto="categoria.foto" />
+            <DishCard v-if="categoria.categoria" :name="categoria.categoria" :foto="categoria.foto" :id="categoria._id"/>
           </v-col>
         </v-row>
       </v-col>
@@ -27,6 +27,7 @@ import ChooseTable from "@/components/ChooseTable.vue";
 import DishCard from "@/components/DishCard.vue";
 import ShoppingCart from "@/components/ShoppingCart.vue";
 import axios from "axios";
+import { log } from 'util';
 export default {
   name: "Order",
   components: {
@@ -50,12 +51,14 @@ export default {
       let me=this;
       axios.get('dishcard/list')
       .then(function (response){
-        console.log(response.data)
+        //console.log(response.data)
         me.categorias = response.data
+      
       })
       .catch(function (error) {
         console.log(error);  
       })
+    
     }
   }
 };

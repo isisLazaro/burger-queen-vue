@@ -4,15 +4,15 @@ self.__precacheManifest = [
     "url": "robots.txt"
   },
   {
-    "revision": "76ebcc25529401370483",
+    "revision": "5fd953d70ca893ed35a3",
     "url": "js/chunk-vendors.158c8bb6.js"
   },
   {
-    "revision": "d5cd87e584e1dd59725d",
-    "url": "js/app.a6e826b7.js"
+    "revision": "7b1d4bc4e220ea39be2c",
+    "url": "js/app.804c0603.js"
   },
   {
-    "revision": "f9d6f3593240378246750a21226b6829",
+    "revision": "39d7d57c92855614b0a347e2e24c2a86",
     "url": "index.html"
   },
   {
@@ -20,11 +20,11 @@ self.__precacheManifest = [
     "url": "img/logo-comdi.db25515e.png"
   },
   {
-    "revision": "76ebcc25529401370483",
-    "url": "css/chunk-vendors.81b99375.css"
+    "revision": "5fd953d70ca893ed35a3",
+    "url": "css/chunk-vendors.3f6a6465.css"
   },
   {
-    "revision": "d5cd87e584e1dd59725d",
-    "url": "css/app.b3f8f963.css"
+    "revision": "7b1d4bc4e220ea39be2c",
+    "url": "css/app.919afc23.css"
   }
 ];

@@ -5,7 +5,7 @@
     <v-card-text>
       <v-row no-gutters>
         <v-col cols="7">
-          <v-btn
+          <v-btn 
             v-on:click="agregarCarritoCombo"
             v-on:enviarTipo="pintarTipo($event)"
             small
@@ -47,14 +47,18 @@ export default {
   name: "DishTypeCard",
   data() {
     return {
-      numDishes: 2,
+      numDishes: 0,
       pedidos: [],
       tipo: [],
       resultadoCombo: [],
       resultadoSencilla: []
-    };
+    }
+  },
+  created() {
+      
   },
   props: {
+  
     name: {
       type: String,
       required: true
@@ -64,7 +68,14 @@ export default {
     },
     sencilla: {
       type: Number
-    }
+    },
+    categoria: {
+      type: Number
+    }, 
+    id: {
+
+    },
+    
   },
   methods: {
     addDish() {
@@ -81,7 +92,7 @@ export default {
       let objetoPrueba = { nombre: "", total: "" };
       objetoPrueba.nombre = tipo;
       objetoPrueba.total = resultadoCombo;
-      console.log(objetoPrueba);
+      //console.log(tipo);
       this.$root.$emit("enviarTipo", objetoPrueba);
       /* let me = this;
       me.pedidos = this.combo
@@ -99,7 +110,7 @@ export default {
       let objetoPrueba = { nombre: "", total: "" };
       objetoPrueba.nombre = tipo;
       objetoPrueba.total = resultadoSencilla;
-      console.log(objetoPrueba);
+      //console.log(objetoPrueba);
       this.$root.$emit("enviarTipo", objetoPrueba);
     }
   }

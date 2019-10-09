@@ -5,7 +5,7 @@
     <v-card-text>
       <v-row no-gutters>
         <v-col cols="7">
-          <v-btn 
+          <v-btn
             v-on:click="agregarCarritoCombo"
             v-on:enviarTipo="pintarTipo($event)"
             small
@@ -18,15 +18,15 @@
         <v-col cols="4">
           <v-row no-gutters>
             <v-col>
-              <v-btn v-on:click="addDish" left="true" x-small>+</v-btn>
+              <v-btn v-on:click="removeDish" x-small :disabled="numDishes < 1"
+                >-</v-btn
+              >
             </v-col>
             <v-col>
               <v-text-field v-model="numDishes" id readonly solo />
             </v-col>
             <v-col>
-              <v-btn v-on:click="removeDish" x-small :disabled="numDishes < 1"
-                >-</v-btn
-              >
+              <v-btn v-on:click="addDish" left="true" x-small>+</v-btn>
             </v-col>
           </v-row>
         </v-col>
@@ -52,13 +52,10 @@ export default {
       tipo: [],
       resultadoCombo: [],
       resultadoSencilla: []
-    }
+    };
   },
-  created() {
-      
-  },
+  created() {},
   props: {
-  
     name: {
       type: String,
       required: true
@@ -71,11 +68,8 @@ export default {
     },
     categoria: {
       type: Number
-    }, 
-    id: {
-
     },
-    
+    id: {}
   },
   methods: {
     addDish() {
